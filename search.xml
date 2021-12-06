@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>macOS下llvm编译的踩坑经历</title>
+    <url>/2021/06/20/macOS%E4%B8%8Bllvm%E7%BC%96%E8%AF%91%E7%9A%84%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/</url>
+    <content><![CDATA[<h1 id="macOS-下-llvm-编译的踩坑经历"><a href="#macOS-下-llvm-编译的踩坑经历" class="headerlink" title="macOS 下 llvm 编译的踩坑经历"></a>macOS 下 llvm 编译的踩坑经历</h1><h2 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">error: no member named <span class="hljs-string">&#x27;MaybeAlign&#x27;</span> <span class="hljs-keyword">in</span> namespace <span class="hljs-string">&#x27;llvm&#x27;</span><br>    <span class="hljs-built_in">return</span> context.builder.CreateAlignedStore(val, ptr, llvm::MaybeAlign(4));<br>                                                        ~~~~~~^<br>error: no member named <span class="hljs-string">&#x27;MaybeAlign&#x27;</span> <span class="hljs-keyword">in</span> namespace <span class="hljs-string">&#x27;llvm&#x27;</span><br>    <span class="hljs-built_in">return</span> context.builder.CreateAlignedLoad(ptr, llvm::MaybeAlign(4));<br></code></pre></td></tr></table></figure>
+<h2 id="解决过程："><a href="#解决过程：" class="headerlink" title="解决过程："></a>解决过程：</h2><p>使用<code>brew info llvm</code>查看 llvm 版本（<code>brew install llvm</code>安装）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">llvm: stable 12.0.0 (bottled), HEAD [keg-only]<br></code></pre></td></tr></table></figure>
+<p>发现是<code>keg-only</code>的版本（我也不知道这是什么），但是 brew 提示了我</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">If you need to have llvm first <span class="hljs-keyword">in</span> your PATH, run:<br>  <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export PATH=&quot;/usr/local/opt/llvm/bin:$PATH&quot;&#x27;</span> &gt;&gt; ~/.zshrc<br><br>For compilers to find llvm you may need to <span class="hljs-built_in">set</span>:<br>  <span class="hljs-built_in">export</span> LDFLAGS=<span class="hljs-string">&quot;-L/usr/local/opt/llvm/lib&quot;</span><br>  <span class="hljs-built_in">export</span> CPPFLAGS=<span class="hljs-string">&quot;-I/usr/local/opt/llvm/include&quot;</span><br></code></pre></td></tr></table></figure>
+<p>感觉修改环境变量太麻烦了，于是……</p>
+<h2 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h2><p>在编译项目使用的 CMakeLists 中添加：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">SET(LLVM_DIR /usr/<span class="hljs-built_in">local</span>/opt/llvm/lib/cmake/llvm)<br>SET(CMAKE_PREFIX_PATH /usr/<span class="hljs-built_in">local</span>/opt/llvm/lib/cmake/)<br></code></pre></td></tr></table></figure>
+<p>根据自己 llvm 的安装地址进行调整<br>编译成功<br>yeah ～</p>
+]]></content>
+      <categories>
+        <category>踩坑经历</category>
+      </categories>
+      <tags>
+        <tag>llvm</tag>
+        <tag>macOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>macOS安装python glove库踩坑经验</title>
     <url>/2021/05/25/MacOS%E5%AE%89%E8%A3%85python-glove%E5%BA%93%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/</url>
     <content><![CDATA[<h1 id="MacOS-安装-python-glove-库踩坑经验"><a href="#MacOS-安装-python-glove-库踩坑经验" class="headerlink" title="MacOS 安装 python glove 库踩坑经验)"></a>MacOS 安装 python glove 库踩坑经验)</h1><h2 id="碰到的问题"><a href="#碰到的问题" class="headerlink" title="碰到的问题"></a>碰到的问题</h2><p>课程需要使用 glove 库，手上的 windows 电脑这两天又送修了，只能在 mac 上安装 python 的相关环境。其他倒是都没有问题，在使用<code>pip3 install glove-python</code>的时候碰到如下问题</p>
@@ -25,30 +46,9 @@
         <category>踩坑经历</category>
       </categories>
       <tags>
+        <tag>macOS</tag>
         <tag>glove</tag>
         <tag>python</tag>
-        <tag>macOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS下llvm编译的踩坑经历</title>
-    <url>/2021/06/20/macOS%E4%B8%8Bllvm%E7%BC%96%E8%AF%91%E7%9A%84%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/</url>
-    <content><![CDATA[<h1 id="macOS-下-llvm-编译的踩坑经历"><a href="#macOS-下-llvm-编译的踩坑经历" class="headerlink" title="macOS 下 llvm 编译的踩坑经历"></a>macOS 下 llvm 编译的踩坑经历</h1><h2 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">error: no member named <span class="hljs-string">&#x27;MaybeAlign&#x27;</span> <span class="hljs-keyword">in</span> namespace <span class="hljs-string">&#x27;llvm&#x27;</span><br>    <span class="hljs-built_in">return</span> context.builder.CreateAlignedStore(val, ptr, llvm::MaybeAlign(4));<br>                                                        ~~~~~~^<br>error: no member named <span class="hljs-string">&#x27;MaybeAlign&#x27;</span> <span class="hljs-keyword">in</span> namespace <span class="hljs-string">&#x27;llvm&#x27;</span><br>    <span class="hljs-built_in">return</span> context.builder.CreateAlignedLoad(ptr, llvm::MaybeAlign(4));<br></code></pre></td></tr></table></figure>
-<h2 id="解决过程："><a href="#解决过程：" class="headerlink" title="解决过程："></a>解决过程：</h2><p>使用<code>brew info llvm</code>查看 llvm 版本（<code>brew install llvm</code>安装）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">llvm: stable 12.0.0 (bottled), HEAD [keg-only]<br></code></pre></td></tr></table></figure>
-<p>发现是<code>keg-only</code>的版本（我也不知道这是什么），但是 brew 提示了我</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">If you need to have llvm first <span class="hljs-keyword">in</span> your PATH, run:<br>  <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export PATH=&quot;/usr/local/opt/llvm/bin:$PATH&quot;&#x27;</span> &gt;&gt; ~/.zshrc<br><br>For compilers to find llvm you may need to <span class="hljs-built_in">set</span>:<br>  <span class="hljs-built_in">export</span> LDFLAGS=<span class="hljs-string">&quot;-L/usr/local/opt/llvm/lib&quot;</span><br>  <span class="hljs-built_in">export</span> CPPFLAGS=<span class="hljs-string">&quot;-I/usr/local/opt/llvm/include&quot;</span><br></code></pre></td></tr></table></figure>
-<p>感觉修改环境变量太麻烦了，于是……</p>
-<h2 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h2><p>在编译项目使用的 CMakeLists 中添加：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">SET(LLVM_DIR /usr/<span class="hljs-built_in">local</span>/opt/llvm/lib/cmake/llvm)<br>SET(CMAKE_PREFIX_PATH /usr/<span class="hljs-built_in">local</span>/opt/llvm/lib/cmake/)<br></code></pre></td></tr></table></figure>
-<p>根据自己 llvm 的安装地址进行调整<br>编译成功<br>yeah ～</p>
-]]></content>
-      <categories>
-        <category>踩坑经历</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>llvm</tag>
       </tags>
   </entry>
   <entry>
@@ -71,6 +71,26 @@
         <tag>宏观经济学</tag>
         <tag>金融</tag>
         <tag>课程笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/12/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -445,23 +465,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/12/06/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+    <title>面向毕设的react学习笔记</title>
+    <url>/2021/12/07/%E9%9D%A2%E5%90%91%E6%AF%95%E8%AE%BE%E7%9A%84react%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="面向毕设的-react-学习笔记"><a href="#面向毕设的-react-学习笔记" class="headerlink" title="面向毕设的 react 学习笔记"></a>面向毕设的 react 学习笔记</h1>]]></content>
       <categories>
-        <category>技术</category>
+        <category>前端搬砖日记</category>
       </categories>
       <tags>
-        <tag>测试</tag>
+        <tag>react</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计量经济学 知识点汇总</title>
+    <url>/2020/08/31/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<object data="/pdfs/计量经济学.pdf" type="application/pdf" width="100%" height="877px">
+]]></content>
+      <categories>
+        <category>一些课程笔记</category>
+      </categories>
+      <tags>
+        <tag>金融</tag>
+        <tag>课程笔记</tag>
+        <tag>计量经济学</tag>
       </tags>
   </entry>
   <entry>
@@ -1756,20 +1782,6 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
         <tag>课程笔记</tag>
         <tag>cs</tag>
         <tag>离散数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计量经济学 知识点汇总</title>
-    <url>/2020/08/31/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<object data="/pdfs/计量经济学.pdf" type="application/pdf" width="100%" height="877px">
-]]></content>
-      <categories>
-        <category>一些课程笔记</category>
-      </categories>
-      <tags>
-        <tag>金融</tag>
-        <tag>课程笔记</tag>
-        <tag>计量经济学</tag>
       </tags>
   </entry>
 </search>
