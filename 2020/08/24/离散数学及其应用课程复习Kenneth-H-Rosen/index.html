@@ -16,17 +16,17 @@
   <meta name="description" content="某企鹅乱七八糟什么都会记一记的个人博客">
   <meta name="author" content="LJYing">
   <meta name="keywords" content="">
-  <meta name="description" content="离散数学及其应用课程笔记chap1 The Foundations: Logic and Proofs    英文 中文 英文 中文     proposition 命题 equivalence 等价式   predicate 谓词 quantifier 量词   inference 推理 negation 否定NOT$\lnot$   conjunction 合取AND$\and$ Disjun">
+  <meta name="description" content="离散数学及其应用课程笔记chap1 The Foundations: Logic and Proofs    英文 中文 英文 中文     proposition 命题 equivalence 等价式   predicate 谓词 quantifier 量词   inference 推理 negation 否定NOT$\lnot$   conjunction 合取AND$\land$ Disju">
 <meta property="og:type" content="article">
 <meta property="og:title" content="离散数学及其应用课程复习Kenneth H.Rosen">
 <meta property="og:url" content="http://example.com/2020/08/24/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0Kenneth-H-Rosen/index.html">
 <meta property="og:site_name" content="🐧 Island">
-<meta property="og:description" content="离散数学及其应用课程笔记chap1 The Foundations: Logic and Proofs    英文 中文 英文 中文     proposition 命题 equivalence 等价式   predicate 谓词 quantifier 量词   inference 推理 negation 否定NOT$\lnot$   conjunction 合取AND$\and$ Disjun">
+<meta property="og:description" content="离散数学及其应用课程笔记chap1 The Foundations: Logic and Proofs    英文 中文 英文 中文     proposition 命题 equivalence 等价式   predicate 谓词 quantifier 量词   inference 推理 negation 否定NOT$\lnot$   conjunction 合取AND$\land$ Disju">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/watermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGVfemVybw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/watermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGVfemVybw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70-20211206191543634.png">
 <meta property="article:published_time" content="2020-08-24T15:42:32.000Z">
-<meta property="article:modified_time" content="2021-12-06T11:32:51.383Z">
+<meta property="article:modified_time" content="2021-12-06T14:57:48.163Z">
 <meta property="article:author" content="LJYing">
 <meta property="article:tag" content="离散数学">
 <meta property="article:tag" content="课程笔记">
@@ -200,7 +200,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      11k 字
+      10k 字
     </span>
   
 
@@ -209,7 +209,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      34 分钟
+      33 分钟
     </span>
   
 
@@ -272,7 +272,7 @@
 </tr>
 <tr>
 <td>conjunction</td>
-<td>合取AND$\and$</td>
+<td>合取AND$\land$</td>
 <td>Disjunction</td>
 <td>析取OR$\lor$</td>
 </tr>
@@ -341,6 +341,7 @@
 <td>与非$</td>
 <td>$</td>
 <td>satisfiable</td>
+<td></td>
 </tr>
 <tr>
 <td>DNF</td>
@@ -364,7 +365,7 @@
 <td>counterexample</td>
 <td>反例</td>
 <td>Uniqueness Quantifier</td>
-<td>唯一性量词$\exist !$</td>
+<td>唯一性量词$\exists$!</td>
 </tr>
 <tr>
 <td>scope</td>
@@ -411,9 +412,42 @@
 </table>
 </div>
 <ul>
-<li><p>异或</p>
-<p>| $p$  | $q$  | $p\oplus q$ |<br>| —— | —— | —————- |<br>| T    | T    | F           |<br>| T    | F    | T           |<br>| F    | T    | T           |<br>| F    | F    | F           |</p>
-</li>
+<li>异或</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$p$</th>
+<th>$q$</th>
+<th>$p\oplus q$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
 <li><p>IF p THEN q</p>
 <p>p implies q</p>
 <p>p only if q=q if p</p>
@@ -425,11 +459,72 @@
 <p>q unless $\lnot$p</p>
 </li>
 <li><p>逆、逆否、反</p>
-<p>| 符号                         | 含义                                          | 定义               |<br>| —————————————— | ——————————————————————- | ————————— |<br>| $q\rightarrow p$             | is the <strong>converse </strong>of $p\rightarrow q$       | 逆(左右颠倒)       |<br>| $\lnot q\rightarrow \lnot p$ | is the <strong>contrapositive</strong> of $p\rightarrow q$ | 逆否(与原命题等价) |<br>| $\lnot p\rightarrow \lnot q$ | is the <strong>inverse</strong> of $p\rightarrow q$        | 反                 |</p>
 </li>
-<li><p>优先级</p>
-<p>| operator          | precedence |<br>| ————————- | ————— |<br>| $\lnot$           | 1          |<br>| $\land$           | 2          |<br>| $\lor$            | 3          |<br>| $\rightarrow$     | 4          |<br>| $\leftrightarrow$ | 5          |</p>
-</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$q\rightarrow p$</td>
+<td>is the <strong>converse </strong>of $p\rightarrow q$</td>
+<td>逆(左右颠倒)</td>
+</tr>
+<tr>
+<td>$\lnot q\rightarrow \lnot p$</td>
+<td>is the <strong>contrapositive</strong> of $p\rightarrow q$</td>
+<td>逆否(与原命题等价)</td>
+</tr>
+<tr>
+<td>$\lnot p\rightarrow \lnot q$</td>
+<td>is the <strong>inverse</strong> of $p\rightarrow q$</td>
+<td>反</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>优先级</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>operator</th>
+<th>precedence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\lnot$</td>
+<td>1</td>
+</tr>
+<tr>
+<td>$\land$</td>
+<td>2</td>
+</tr>
+<tr>
+<td>$\lor$</td>
+<td>3</td>
+</tr>
+<tr>
+<td>$\rightarrow$</td>
+<td>4</td>
+</tr>
+<tr>
+<td>$\leftrightarrow$</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
 <li><p>对偶式</p>
 <p>$S=(p\lor \lnot q)\land r\land T$</p>
 <p>$S^*=(p\land \lnot q)\lor r\lor F$</p>
@@ -448,9 +543,60 @@
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/watermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGVfemVybw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>corresponding tautology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modus Ponens</td>
+<td>假言推理</td>
+<td>$(p\land(p\rightarrow q))\rightarrow q$</td>
+</tr>
+<tr>
+<td>Modus Tollens</td>
+<td>取拒式</td>
+<td>$(\lnot q\land(p\rightarrow q))\rightarrow \lnot p$</td>
+</tr>
+<tr>
+<td>Hypothetical Syllogism</td>
+<td>假言三段论</td>
+<td>$((p\rightarrow q)\land(q\rightarrow r))\rightarrow(p\rightarrow r)$</td>
+</tr>
+<tr>
+<td>Disjunctive Syllogism</td>
+<td>析取三段论</td>
+<td>$(\lnot p\land(p\lor q))\rightarrow q$</td>
+</tr>
+<tr>
+<td>Addition</td>
+<td>附加律</td>
+<td>$p\rightarrow (p\lor q)$</td>
+</tr>
+<tr>
+<td>Simplification</td>
+<td>简化律</td>
+<td>$(p\land q)\rightarrow p$</td>
+</tr>
+<tr>
+<td>Conjunction</td>
+<td>合取律</td>
+<td>$((p)\land(q))\rightarrow(p\land q)$</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>消解律</td>
+<td>$((\lnot p\lor r)\land(p\lor q))\rightarrow (r\lor q)$</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
-<li><p>|                        |            | corresponding tautology                                      |<br>| ——————————— | ————— | —————————————————————————————— |<br>| Modus Ponens           | 假言推理   | $(p\land(p\rightarrow q))\rightarrow q$                      |<br>| Modus Tollens          | 取拒式     | $(\lnot q\land(p\rightarrow q))\rightarrow \lnot p$          |<br>| Hypothetical Syllogism | 假言三段论 | $((p\rightarrow q)\land(q\rightarrow r))\rightarrow(p\rightarrow r)$ |<br>| Disjunctive Syllogism  | 析取三段论 | $(\lnot p\land(p\lor q))\rightarrow q$                       |<br>| Addition               | 附加律     | $p\rightarrow (p\lor q)$                                     |<br>| Simplification         | 简化律     | $(p\land q)\rightarrow p$                                    |<br>| Conjunction            | 合取律     | $((p)\and(q))\rightarrow(p\land q)$                          |<br>| Resolution             | 消解律     | $((\lnot p\lor r)\land(p\lor q))\rightarrow (r\lor q)$       |</p>
-</li>
 <li><p>平凡证明：$p\rightarrow T$ is $T$</p>
 <p>空证明：$F\rightarrow q$ is $T$</p>
 </li>
@@ -571,8 +717,44 @@
 </li>
 <li><p>$n!\sim \sqrt{2\pi n}(\frac n e)^n$</p>
 </li>
-<li><p>| Sum                                      | Closed Form                       |<br>| ———————————————————— | ————————————————- |<br>| $\sum_{k=0}^n ar^k$                      | $\frac{ar^{n+1}-a}{r-1}, r\neq 1$ |<br>| $\sum_{k=1}^n k$                         | $\frac{n(n+1)}2$                  |<br>| $\sum_{k=1}^n k^2$                       | $\frac{n(n+1)(n+2)}6$             |<br>| $\sum_{k=1}^n k^3$                       | $\frac{n^2(n+1)^2}4$              |<br>| $\sum_{k=0}^\infty x^k, \vert x\vert &lt;1$ | $\frac 1{1-x}$                    |<br>| $\sum_{k=1}^\infty kx^{k-1}$             | $\frac 1 {(1-x)^2}$               |</p>
-</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Sum</th>
+<th>Closed Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\sum_{k=0}^n ar^k$</td>
+<td>$\frac{ar^{n+1}-a}{r-1}, r\neq 1$</td>
+</tr>
+<tr>
+<td>$\sum_{k=1}^n k$</td>
+<td>$\frac{n(n+1)}2$</td>
+</tr>
+<tr>
+<td>$\sum_{k=1}^n k^2$</td>
+<td>$\frac{n(n+1)(n+2)}6$</td>
+</tr>
+<tr>
+<td>$\sum_{k=1}^n k^3$</td>
+<td>$\frac{n^2(n+1)^2}4$</td>
+</tr>
+<tr>
+<td>$\sum_{k=0}^\infty x^k, \vert x\vert &lt;1$</td>
+<td>$\frac 1{1-x}$</td>
+</tr>
+<tr>
+<td>$\sum_{k=1}^\infty kx^{k-1}$</td>
+<td>$\frac 1 {(1-x)^2}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
 <li><p>可数集：基是有限的或跟正整数集相同，则是可数的</p>
 </li>
 <li><p>一个无限且可数的集合的基被称为$\aleph_0$（可以跟正整数集建立一个一一对应的映射）</p>
@@ -609,9 +791,31 @@
 </tbody>
 </table>
 </div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Notation</th>
+<th>Explaination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Big-O:$f(x)$ is $O(g(x))$</td>
+<td>$\vert f(x)\vert\leq C\vert g(x)\vert$</td>
+</tr>
+<tr>
+<td>Big-Omega:$f(x)$ is $\Omega(g(x))$</td>
+<td>$\vert f(x)\vert\geq C\vert g(x)\vert$</td>
+</tr>
+<tr>
+<td>Big-Theta:$f(x)$ is $\Theta(g(x))$</td>
+<td>$O(g(x)) \&amp; \Omega(g(x))$</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
-<li><p>| Notation                           | Explaination                           |<br>| ————————————————— | ——————————————————— |<br>| Big-O:$f(x)$ is $O(g(x))$          | $\vert f(x)\vert\leq C\vert g(x)\vert$ |<br>| Big-Omega:$f(x)$ is $\Omega(g(x))$ | $\vert f(x)\vert\geq C\vert g(x)\vert$ |<br>| Big-Theta:$f(x)$ is $\Theta(g(x))$ | $O(g(x)) \&amp; \Omega(g(x))$              |</p>
-</li>
 <li><p>NP类：可以在多项式复杂度内被check，但不能在多项式复杂度内解决</p>
 </li>
 <li><p>NP完全类：if you find a polynomial time algorithm for one member of the class, it can be used to solve all the problems in the class</p>
@@ -683,9 +887,41 @@
 <li><p>有n种饼干，取出共r个饼干的组合数量为：$C(n+r-1,r)$</p>
 </li>
 <li><p>n个物体，k个盒子：</p>
-<p>| n个物体 | r个盒子 | 数量                        |<br>| ———- | ———- | —————————————- |<br>| 不同    | 不同    | $\frac{n!}{n_1!n_2!··n_k!}$ |<br>| 相同    | 不同    | $C(n+r-1,n-1)$              |<br>| 不同    | 相同    | —                          |<br>| 相同    | 相同    | —                          |</p>
 </li>
 </ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>n个物体</th>
+<th>r个盒子</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不同</td>
+<td>不同</td>
+<td>$\frac{n!}{n_1!n_2!··n_k!}$</td>
+</tr>
+<tr>
+<td>相同</td>
+<td>不同</td>
+<td>$C(n+r-1,n-1)$</td>
+</tr>
+<tr>
+<td>不同</td>
+<td>相同</td>
+<td>—</td>
+</tr>
+<tr>
+<td>相同</td>
+<td>相同</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <h2 id="chap8-Advanced-Counting-Techniques"><a href="#chap8-Advanced-Counting-Techniques" class="headerlink" title="chap8 Advanced Counting Techniques"></a>chap8 Advanced Counting Techniques</h2><div class="table-container">
 <table>
@@ -875,11 +1111,11 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 <p>$\forall x \forall y[(x,y)\in R \to (y,x)\in R]$</p>
 </li>
 <li><p>反对称性Antisymmetric</p>
-<p>$\forall x \forall y[(x,y)\in R\and(y,x)\in R \to x=y]$</p>
+<p>$\forall x \forall y[(x,y)\in R\land(y,x)\in R \to x=y]$</p>
 <p>不存在除了自反之外的对称关系</p>
 </li>
 <li><p>传递性Transitive</p>
-<p>$\forall x \forall y\forall z [(x,y)\in R \and (y,z)\in R\to (x,z)\in R]$</p>
+<p>$\forall x \forall y\forall z [(x,y)\in R \land (y,z)\in R\to (x,z)\in R]$</p>
 </li>
 </ul>
 </li>
@@ -1507,6 +1743,48 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
 
 
 
