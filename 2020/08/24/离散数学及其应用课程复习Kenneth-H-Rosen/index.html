@@ -16,20 +16,21 @@
   <meta name="description" content="某企鹅乱七八糟什么都会记一记的个人博客">
   <meta name="author" content="LJYing">
   <meta name="keywords" content="">
-  <meta name="description" content="离散数学及其应用课程笔记chap1 The Foundations: Logic and Proofs    英文 中文 英文 中文     proposition 命题 equivalence 等价式   predicate 谓词 quantifier 量词   inference 推理 negation 否定NOT$\lnot$   conjunction 合取AND$\land$ Disju">
+  <meta name="description" content="离散数学及其应用课程笔记chap1 The Foundations: Logic and Proofs    英文 中文 英文 中文     proposition 命题 equivalence 等价式   predicate 谓词 quantifier 量词   inference 推理 negation 否定 NOT$\lnot$   conjunction 合取 AND$\land$ Dis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="离散数学及其应用课程复习Kenneth H.Rosen">
 <meta property="og:url" content="http://example.com/2020/08/24/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0Kenneth-H-Rosen/index.html">
 <meta property="og:site_name" content="🐧 Island">
-<meta property="og:description" content="离散数学及其应用课程笔记chap1 The Foundations: Logic and Proofs    英文 中文 英文 中文     proposition 命题 equivalence 等价式   predicate 谓词 quantifier 量词   inference 推理 negation 否定NOT$\lnot$   conjunction 合取AND$\land$ Disju">
+<meta property="og:description" content="离散数学及其应用课程笔记chap1 The Foundations: Logic and Proofs    英文 中文 英文 中文     proposition 命题 equivalence 等价式   predicate 谓词 quantifier 量词   inference 推理 negation 否定 NOT$\lnot$   conjunction 合取 AND$\land$ Dis">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/watermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGVfemVybw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/watermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGVfemVybw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70-20211206191543634.png">
 <meta property="article:published_time" content="2020-08-24T15:42:32.000Z">
-<meta property="article:modified_time" content="2021-12-06T14:57:48.163Z">
+<meta property="article:modified_time" content="2021-12-06T15:34:43.698Z">
 <meta property="article:author" content="LJYing">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="离散数学">
+<meta property="article:tag" content="cs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/watermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGVfemVybw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70.png">
   
@@ -268,17 +269,17 @@
 <td>inference</td>
 <td>推理</td>
 <td>negation</td>
-<td>否定NOT$\lnot$</td>
+<td>否定 NOT$\lnot$</td>
 </tr>
 <tr>
 <td>conjunction</td>
-<td>合取AND$\land$</td>
+<td>合取 AND$\land$</td>
 <td>Disjunction</td>
-<td>析取OR$\lor$</td>
+<td>析取 OR$\lor$</td>
 </tr>
 <tr>
 <td>Exclusive or</td>
-<td>异或XOR$\oplus$</td>
+<td>异或 XOR$\oplus$</td>
 <td>Implication</td>
 <td>IF-THEN$\rightarrow$</td>
 </tr>
@@ -528,18 +529,18 @@
 <li><p>对偶式</p>
 <p>$S=(p\lor \lnot q)\land r\land T$</p>
 <p>$S^*=(p\land \lnot q)\lor r\lor F$</p>
-<p>即所有and变成or，所有or变成and，所有T变成F，所有F变成T</p>
+<p>即所有 and 变成 or，所有 or 变成 and，所有 T 变成 F，所有 F 变成 T</p>
 <p>$s\Leftrightarrow t$ if and only if $s^<em>\Leftrightarrow t^</em>$</p>
 </li>
 <li><p>功能完备符号：</p>
 <p>$\{\lnot, \lor\}$、$\{\lnot, \land\}$、$\{|\}$、$\{\downarrow\}$</p>
 </li>
-<li><p>析取DNF范式：$(A_1\land A_2)\lor B_1\lor (C_1\land C_2)$</p>
-<p>合取CNF范式：$(A_1\lor A_2)\land B_1\land (C_1\lor C_2)$</p>
+<li><p>析取 DNF 范式：$(A_1\land A_2)\lor B_1\lor (C_1\land C_2)$</p>
+<p>合取 CNF 范式：$(A_1\lor A_2)\land B_1\land (C_1\lor C_2)$</p>
 </li>
 <li><p>量词优先级比逻辑运算符更高</p>
 </li>
-<li><p>命题中的变量必须是Bound variable（被赋值的或被量词约束的）</p>
+<li><p>命题中的变量必须是 Bound variable（被赋值的或被量词约束的）</p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/watermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGVfemVybw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
@@ -703,9 +704,9 @@
 <ul>
 <li><p>集合的基数记为$\vert A\vert$，即集合中元素的个数</p>
 </li>
-<li><p>幂集$\mathcal{P}(A)$：集合中所有子集组成的集合，一个n个元素的集合的幂集有$2^n$个元素</p>
+<li><p>幂集$\mathcal{P}(A)$：集合中所有子集组成的集合，一个 n 个元素的集合的幂集有$2^n$个元素</p>
 </li>
-<li><p>两个元素的元组被称为ordered pairs序偶</p>
+<li><p>两个元素的元组被称为 ordered pairs 序偶</p>
 </li>
 <li><p>笛卡尔积：$A\times B=\{(a,b)\vert a\in A \land b\in B\}$</p>
 </li>
@@ -816,9 +817,9 @@
 </table>
 </div>
 <ul>
-<li><p>NP类：可以在多项式复杂度内被check，但不能在多项式复杂度内解决</p>
+<li><p>NP 类：可以在多项式复杂度内被 check，但不能在多项式复杂度内解决</p>
 </li>
-<li><p>NP完全类：if you find a polynomial time algorithm for one member of the class, it can be used to solve all the problems in the class</p>
+<li><p>NP 完全类：if you find a polynomial time algorithm for one member of the class, it can be used to solve all the problems in the class</p>
 </li>
 </ul>
 <hr>
@@ -884,17 +885,17 @@
 <li>推论：$\begin{pmatrix}2n\\n\end{pmatrix}=\Sigma_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}^2$</li>
 </ul>
 </li>
-<li><p>有n种饼干，取出共r个饼干的组合数量为：$C(n+r-1,r)$</p>
+<li><p>有 n 种饼干，取出共 r 个饼干的组合数量为：$C(n+r-1,r)$</p>
 </li>
-<li><p>n个物体，k个盒子：</p>
+<li><p>n 个物体，k 个盒子：</p>
 </li>
 </ul>
 <div class="table-container">
 <table>
 <thead>
 <tr>
-<th>n个物体</th>
-<th>r个盒子</th>
+<th>n 个物体</th>
+<th>r 个盒子</th>
 <th>数量</th>
 </tr>
 </thead>
@@ -955,28 +956,28 @@
 </table>
 </div>
 <ul>
-<li><p>degree：$a_n=a_{n-1}+a_{n-8}$的degree为8</p>
+<li><p>degree：$a_n=a_{n-1}+a_{n-8}$的 degree 为 8</p>
 <p>a recurrence relation of degree 8</p>
 </li>
-<li><p>Hanoi汉诺塔（3个柱子）：$H_n=2^n-1$</p>
+<li><p>Hanoi 汉诺塔（3 个柱子）：$H_n=2^n-1$</p>
 </li>
-<li><p>齐次：每个x都是1次方的</p>
+<li><p>齐次：每个 x 都是 1 次方的</p>
 </li>
 <li><p>非齐次公式：</p>
 <p>如果递推关系是为：$a_n=c_1a_{n-1}+c_2a_{a-2}+···+c_ka_{n-k}+F(n)$</p>
 <p>非齐次项$F(n)$可以被记为$F(n)=(b_tn^t+b_{t-1}n^{t-1}+···+b_1n+b_0)s^n$</p>
-<p>如果s是$a_n=c_1a_{n-1}+c_2a_{a-2}+···+c_ka_{n-k}$的一个根，m为次数，最后的特解可以被记为：$f(n)=n^m(p_tn^t+p_{t-1}n^{t-1}+···+p_1n+p_0)s^n$</p>
-<p>如果s不是是$a_n=c_1a_{n-1}+c_2a_{a-2}+···+c_ka_{n-k}$的一个根，最后的特解可以被记为：$f(n)=(p_tn^t+p_{t-1}n^{t-1}+···+p_1n+p_0)s^n$</p>
+<p>如果 s 是$a_n=c_1a_{n-1}+c_2a_{a-2}+···+c_ka_{n-k}$的一个根，m 为次数，最后的特解可以被记为：$f(n)=n^m(p_tn^t+p_{t-1}n^{t-1}+···+p_1n+p_0)s^n$</p>
+<p>如果 s 不是是$a_n=c_1a_{n-1}+c_2a_{a-2}+···+c_ka_{n-k}$的一个根，最后的特解可以被记为：$f(n)=(p_tn^t+p_{t-1}n^{t-1}+···+p_1n+p_0)s^n$</p>
 <blockquote>
 <p>例如</p>
 <hr>
 <p>$a_n=6a_{n-1}-9a_{n-2}+F(n)$</p>
 <p>$F(n)=(n^2+1)3^n$</p>
-<p>则$m=2, s=3, f(n)=n^2(p_2n^2+p_1n+p_0)3^n $（s=3为一个根）</p>
+<p>则$m=2, s=3, f(n)=n^2(p_2n^2+p_1n+p_0)3^n $（s=3 为一个根）</p>
 <hr>
 <p>$a_n=6a_{n-1}-9a_{n-2}+F(n)$</p>
 <p>$F(n)=n^22^n$</p>
-<p>则$s=2, f(n)=(p_2n^2+p_1n+p_0)2^n $（s=2不是一个根）</p>
+<p>则$s=2, f(n)=(p_2n^2+p_1n+p_0)2^n $（s=2 不是一个根）</p>
 </blockquote>
 </li>
 <li><p>分治算法复杂度：</p>
@@ -1017,7 +1018,7 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 </ul>
 <p><img src="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/watermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGVfemVybw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70-20211206191543634.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <ul>
-<li>n元素集合的错位排序个数：$D_n=n![1-\frac{1}{1!}+\frac 1{2!}-\frac 1{3!}+···+(-1)^n\frac 1 {n!}]$</li>
+<li>n 元素集合的错位排序个数：$D_n=n![1-\frac{1}{1!}+\frac 1{2!}-\frac 1{3!}+···+(-1)^n\frac 1 {n!}]$</li>
 </ul>
 <hr>
 <h2 id="chap9-Relations"><a href="#chap9-Relations" class="headerlink" title="chap9 Relations"></a>chap9 Relations</h2><div class="table-container">
@@ -1103,18 +1104,18 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 <ul>
 <li><p>集合的性质</p>
 <ul>
-<li><p>自反性Reflexive</p>
+<li><p>自反性 Reflexive</p>
 <p>$(a,a)\in R$，$\forall x[x\in U\to(x,x)\in R]$</p>
 <p>空集上的空关系是自反的</p>
 </li>
-<li><p>对称性Symmetric</p>
+<li><p>对称性 Symmetric</p>
 <p>$\forall x \forall y[(x,y)\in R \to (y,x)\in R]$</p>
 </li>
-<li><p>反对称性Antisymmetric</p>
+<li><p>反对称性 Antisymmetric</p>
 <p>$\forall x \forall y[(x,y)\in R\land(y,x)\in R \to x=y]$</p>
 <p>不存在除了自反之外的对称关系</p>
 </li>
-<li><p>传递性Transitive</p>
+<li><p>传递性 Transitive</p>
 <p>$\forall x \forall y\forall z [(x,y)\in R \land (y,z)\in R\to (x,z)\in R]$</p>
 </li>
 </ul>
@@ -1132,24 +1133,24 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 </ul>
 </li>
 <li><p>transitive closure：</p>
-<p>连通关系connectivity relation：$R^*=\cup _1 ^\infty R^n$</p>
+<p>连通关系 connectivity relation：$R^*=\cup _1 ^\infty R^n$</p>
 <p>关系的传递闭包就是关系的连通关系$R^*=t(R)$</p>
 </li>
 <li><p>等价关系：自反、对称且传递</p>
 <p>$a\text{~}b$</p>
 </li>
-<li><p>R为集合A上的一个等价关系，则在集合A中与元素a相关的所有元素可以被表示为$[a]_R$（等价类）</p>
+<li><p>R 为集合 A 上的一个等价关系，则在集合 A 中与元素 a 相关的所有元素可以被表示为$[a]_R$（等价类）</p>
 <script type="math/tex; mode=display">
 [a]_R=\{s|(a,s)\in R\}</script></li>
 <li><p>代表元：等价类中的任何一个元素都可以被成为代表元</p>
 </li>
 <li><p>集合的划分：$pr(A)=\{A_i|i\in I\}$</p>
 </li>
-<li><p>$R_1$、$R_2$为A上的两个等价关系，则$R_1\cup R_2$是A上的自反、对称关系，$(R_1\cup R_2)^*$是自反、对称、传递关系即等价关系</p>
+<li><p>$R_1$、$R_2$为 A 上的两个等价关系，则$R_1\cup R_2$是 A 上的自反、对称关系，$(R_1\cup R_2)^*$是自反、对称、传递关系即等价关系</p>
 </li>
 <li><p>偏序关系：自反、传递、==反对称==（分大小的不平等关系）</p>
 <ul>
-<li>$poset(S,\preccurlyeq)$：定义在集合S上的一个偏序关系</li>
+<li>$poset(S,\preccurlyeq)$：定义在集合 S 上的一个偏序关系</li>
 <li>如果集合中任意两个元素都是可比的，则成为全序、线序，整个集合被称为一个链</li>
 <li>良序：拥有最小元素</li>
 <li>极小（大）元：没有一个小于它</li>
@@ -1257,9 +1258,9 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 <li><p>有关图的术语：</p>
 <ul>
 <li>adjacent：两个顶点之间有边相连，则称这两个顶点相关联</li>
-<li>incident with vertices u and v：这条边连接了顶点u和v</li>
+<li>incident with vertices u and v：这条边连接了顶点 u 和 v</li>
 <li>loop：环</li>
-<li>degree of a vertex顶点的度：在无向图中即为有多少条边与这个点关联（==环算两个度==）<ul>
+<li>degree of a vertex 顶点的度：在无向图中即为有多少条边与这个点关联（==环算两个度==）<ul>
 <li>$deg(v)=0$，v is isolated</li>
 <li>$deg(v)=1$，v is pendant</li>
 </ul>
@@ -1268,7 +1269,7 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 <li>无向图中，偶数个顶点是奇数个度</li>
 </ul>
 </li>
-<li>有向图中，一条边的起点initial vertex，终点terminal vertex<ul>
+<li>有向图中，一条边的起点 initial vertex，终点 terminal vertex<ul>
 <li>$\Sigma_{v\in V}deg^+(v)=\Sigma_{v\in V}deg^-(v)=E$</li>
 </ul>
 </li>
@@ -1276,24 +1277,24 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 </li>
 <li>一些特殊的图：<ul>
 <li>完全图$K_n$：每对顶点之间有且只有一条边相连</li>
-<li>圈图$C_n$：n个顶点围成一个圈首尾相连</li>
+<li>圈图$C_n$：n 个顶点围成一个圈首尾相连</li>
 <li>轮图$W_n$：在圈图中间加个点</li>
 <li>立方图$Q_n$</li>
 </ul>
 </li>
 <li>完全二分图$K_{mn}$:两组集合中每个点都与对面任意一个点相连</li>
 <li>正规图：每个顶点的度都相同</li>
-<li><p>induced subgraph诱导子图：当且仅当子图中的边都在原图里，仅删除与子图中不存在的顶点相连的边</p>
+<li><p>induced subgraph 诱导子图：当且仅当子图中的边都在原图里，仅删除与子图中不存在的顶点相连的边</p>
 </li>
-<li><p>Incidence matrices关联矩阵：纵坐标为顶点，横坐标为边，针对无向图</p>
+<li><p>Incidence matrices 关联矩阵：纵坐标为顶点，横坐标为边，针对无向图</p>
 </li>
 <li>path is simple：没有一条边被重复的通路<ul>
-<li>单个顶点的通路长度为0</li>
+<li>单个顶点的通路长度为 0</li>
 </ul>
 </li>
-<li>图的连通：任意一对顶点间都有path</li>
-<li>割点：关节点，删去后会增加connected components的个数</li>
-<li>割边/桥：关节边，删去后会增加connected components的个数</li>
+<li>图的连通：任意一对顶点间都有 path</li>
+<li>割点：关节点，删去后会增加 connected components 的个数</li>
+<li>割边/桥：关节边，删去后会增加 connected components 的个数</li>
 <li><p>任何一个强连通的有向图都是弱连通的，可以把弱连通看作无向图，而强连通指有向图每对顶点间都双向连通</p>
 <ul>
 <li>strongly connected components/strong components：有向图中的最大强连接子图</li>
@@ -1305,7 +1306,7 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 <li>欧拉图：包含欧拉回路的图</li>
 <li>对于无向图：<ul>
 <li><u>==欧拉回路充要条件==：当且仅当每个顶点都是偶数个度</u></li>
-<li><u>==欧拉通路充要条件==：当且仅当只有2个顶点是奇数个度</u></li>
+<li><u>==欧拉通路充要条件==：当且仅当只有 2 个顶点是奇数个度</u></li>
 </ul>
 </li>
 <li>对于有向图<ul>
@@ -1324,15 +1325,15 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 </ul>
 </li>
 <li>必要条件（用于判断不是哈密尔顿）：<ul>
-<li>连通图，每个顶点的度都必须大于等于1</li>
-<li>最多只有两个顶点的度是1</li>
-<li>如果一个顶点的度为2，则两条边都为哈密尔顿回路的一部分</li>
-<li>从顶点集合V中去掉一组顶点S，则新图的连接部分数量&lt;=S的个数</li>
+<li>连通图，每个顶点的度都必须大于等于 1</li>
+<li>最多只有两个顶点的度是 1</li>
+<li>如果一个顶点的度为 2，则两条边都为哈密尔顿回路的一部分</li>
+<li>从顶点集合 V 中去掉一组顶点 S，则新图的连接部分数量&lt;=S 的个数</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>weighted graph加权图：$G=(V,E,W)$</p>
+<li><p>weighted graph 加权图：$G=(V,E,W)$</p>
 </li>
 <li><p>Dijkstra:寻找最短路径，要求所有路径都是正权重的</p>
 <ul>
@@ -1349,7 +1350,7 @@ f(x)=\Sigma_{k=0}^\infty a_kx^k,g(x)=\Sigma_{k=0}^\infty b_kx^k</script><ol>
 </li>
 <li><p>平面图：可以画在平面上且边与边不交叉</p>
 </li>
-<li><p>区域Region：包括有界区域和无界区域</p>
+<li><p>区域 Region：包括有界区域和无界区域</p>
 </li>
 <li><p>==<strong>欧拉公式</strong>==：对于连通的平面简单图</p>
 <script type="math/tex; mode=display">
@@ -1357,17 +1358,17 @@ r=e-v+2</script><p>对于非平面图也可能成立</p>
 </li>
 <li><p>区域的度：区域边的总数（绕一圈的边的总数）</p>
 <ul>
-<li><p>推论1：</p>
+<li><p>推论 1：</p>
 <script type="math/tex; mode=display">
 e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成立</p>
 </li>
-<li><p>推论2：对于一个平面简单图，G一定有一个顶点的度不超过5</p>
+<li><p>推论 2：对于一个平面简单图，G 一定有一个顶点的度不超过 5</p>
 </li>
-<li><p>推论3：对于一个平面简单图，如果任何一个回路的长度都大于3，则$e\leq 2v-4$</p>
+<li><p>推论 3：对于一个平面简单图，如果任何一个回路的长度都大于 3，则$e\leq 2v-4$</p>
 </li>
 </ul>
 </li>
-<li><p>Kuratowski定理</p>
+<li><p>Kuratowski 定理</p>
 <ul>
 <li>初等细分：增加原有道路上的细分点</li>
 <li>同胚：可以通过一系列的初等细分所获得的图</li>
@@ -1379,7 +1380,7 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
 <li>地图的对偶图，相邻的区域间连线</li>
 <li>等价于对偶图的顶点着色，使每条边上的两个顶点不同颜色</li>
 <li>最少着色数记为$\chi(G)$</li>
-<li>==四色定理==：一个<u>平面图</u>的着色数不超过4</li>
+<li>==四色定理==：一个<u>平面图</u>的着色数不超过 4</li>
 </ul>
 </li>
 </ul>
@@ -1431,7 +1432,7 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
 <li>树：没有简单回路的连通无向图</li>
 <li><p>无向图是一棵树$\Leftrightarrow$每两个顶点之间都有唯一的简单通路</p>
 </li>
-<li><p>满m叉树：每个中间节点都有m个孩子</p>
+<li><p>满 m 叉树：每个中间节点都有 m 个孩子</p>
 </li>
 <li><p>树的同构：</p>
 <ul>
@@ -1441,8 +1442,8 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
 </li>
 <li><p>树的性质：</p>
 <ul>
-<li>n个顶点的树就有n-1条边</li>
-<li>一个有i个内节点的满m叉树有$mi+1$和顶点</li>
+<li>n 个顶点的树就有 n-1 条边</li>
+<li>一个有 i 个内节点的满 m 叉树有$mi+1$和顶点</li>
 <li>树一定是个二分图</li>
 </ul>
 </li>
@@ -1464,21 +1465,21 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
 <li><p>生成树</p>
 <ul>
 <li>一个简单图是连通的$\Leftrightarrow$包含一个生成树</li>
-<li>DFS深度优先搜索（回溯）会形成一个根树</li>
-<li>BFS广度优先搜索</li>
+<li>DFS 深度优先搜索（回溯）会形成一个根树</li>
+<li>BFS 广度优先搜索</li>
 </ul>
 </li>
 <li><p>最小生成树</p>
 <ul>
-<li>Prim算法：找与已经连接的生成树距离最短的点，直到完全连通，$O(E\log(V))$</li>
-<li>Kruskal算法：找现存的最短边（不会产生回路），直到完全联通，$O(V\log(E))$</li>
+<li>Prim 算法：找与已经连接的生成树距离最短的点，直到完全连通，$O(E\log(V))$</li>
+<li>Kruskal 算法：找现存的最短边（不会产生回路），直到完全联通，$O(V\log(E))$</li>
 </ul>
 </li>
 <li><p>树：没有简单回路的连通无向图</p>
 </li>
 <li><p>无向图是一棵树$\Leftrightarrow$每两个顶点之间都有唯一的简单通路</p>
 </li>
-<li><p>满m叉树：每个中间节点都有m个孩子</p>
+<li><p>满 m 叉树：每个中间节点都有 m 个孩子</p>
 </li>
 <li><p>树的同构：</p>
 <ul>
@@ -1488,8 +1489,8 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
 </li>
 <li><p>树的性质：</p>
 <ul>
-<li>n个顶点的树就有n-1条边</li>
-<li>一个有i个内节点的满m叉树有$mi+1$和顶点</li>
+<li>n 个顶点的树就有 n-1 条边</li>
+<li>一个有 i 个内节点的满 m 叉树有$mi+1$和顶点</li>
 <li>树一定是个二分图</li>
 </ul>
 </li>
@@ -1511,14 +1512,14 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
 <li><p>生成树</p>
 <ul>
 <li>一个简单图是连通的$\Leftrightarrow$包含一个生成树</li>
-<li>DFS深度优先搜索（回溯）会形成一个根树</li>
-<li>BFS广度优先搜索</li>
+<li>DFS 深度优先搜索（回溯）会形成一个根树</li>
+<li>BFS 广度优先搜索</li>
 </ul>
 </li>
 <li><p>最小生成树</p>
 <ul>
-<li>Prim算法：找与已经连接的生成树距离最短的点，直到完全连通，$O(E\log(V))$</li>
-<li>Kruskal算法：找现存的最短边（不会产生回路），直到完全联通，$O(V\log(E))$</li>
+<li>Prim 算法：找与已经连接的生成树距离最短的点，直到完全连通，$O(E\log(V))$</li>
+<li>Kruskal 算法：找现存的最短边（不会产生回路），直到完全联通，$O(V\log(E))$</li>
 </ul>
 </li>
 </ul>
@@ -1543,6 +1544,8 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
                     
                       <a class="hover-with-bg" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a>
                     
+                      <a class="hover-with-bg" href="/tags/cs/">cs</a>
+                    
                   </div>
                 
               </div>
@@ -1558,15 +1561,21 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/05/25/MacOS%E5%AE%89%E8%A3%85python-glove%E5%BA%93%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/">
+                      <a href="/2020/08/31/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">macOS安装python glove库踩坑经验</span>
+                        <span class="hidden-mobile">计量经济学 知识点汇总</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2020/07/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80fds-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">数据结构基础fds 课程笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

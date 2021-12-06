@@ -1,0 +1,889 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="某企鹅乱七八糟什么都会记一记的个人博客">
+  <meta name="author" content="LJYing">
+  <meta name="keywords" content="">
+  <meta name="description" content="DataStructure 课程笔记 数据结构基础 fdschap02 Algorithm Analysis    $T(N)&#x3D;O(f(N))$ $T(N)\leq c f(N)$     $T(N)&#x3D;\Omega(f(N))$ $T(N)\geq c f(N)$   $T(N)&#x3D;\Theta(f(N))$ $T(N)&#x3D; c f(N)$   $T(N)&#x3D;o(f(N))$ $T(N)&#x3D;O(f(N))">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构基础fds 课程笔记">
+<meta property="og:url" content="http://example.com/2020/07/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80fds-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="🐧 Island">
+<meta property="og:description" content="DataStructure 课程笔记 数据结构基础 fdschap02 Algorithm Analysis    $T(N)&#x3D;O(f(N))$ $T(N)\leq c f(N)$     $T(N)&#x3D;\Omega(f(N))$ $T(N)\geq c f(N)$   $T(N)&#x3D;\Theta(f(N))$ $T(N)&#x3D; c f(N)$   $T(N)&#x3D;o(f(N))$ $T(N)&#x3D;O(f(N))">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/format%2Cpng.png">
+<meta property="article:published_time" content="2020-07-03T13:04:19.000Z">
+<meta property="article:modified_time" content="2021-12-06T15:43:19.521Z">
+<meta property="article:author" content="LJYing">
+<meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="cs">
+<meta property="article:tag" content="fds">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/format%2Cpng.png">
+  
+  <title>数据结构基础fds 课程笔记 - 🐧 Island</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>🐧Island</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/penguin.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="数据结构基础fds 课程笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-07-03 21:04" pubdate>
+        2020年7月3日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      19 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据结构基础fds 课程笔记</h1>
+            
+            <div class="markdown-body">
+              <h1 id="DataStructure-课程笔记-数据结构基础-fds"><a href="#DataStructure-课程笔记-数据结构基础-fds" class="headerlink" title="DataStructure 课程笔记 数据结构基础 fds"></a>DataStructure 课程笔记 数据结构基础 fds</h1><h2 id="chap02-Algorithm-Analysis"><a href="#chap02-Algorithm-Analysis" class="headerlink" title="chap02 Algorithm Analysis"></a>chap02 Algorithm Analysis</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$T(N)=O(f(N))$</th>
+<th>$T(N)\leq c f(N)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$T(N)=\Omega(f(N))$</td>
+<td>$T(N)\geq c f(N)$</td>
+</tr>
+<tr>
+<td>$T(N)=\Theta(f(N))$</td>
+<td>$T(N)= c f(N)$</td>
+</tr>
+<tr>
+<td>$T(N)=o(f(N))$</td>
+<td>$T(N)=O(f(N))$ and $T(N)\neq\Theta(f(N))$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>$\log^kN=O(N)$: algorithm grows very slowly.</li>
+</ul>
+<h2 id="chap03-ADT-List"><a href="#chap03-ADT-List" class="headerlink" title="chap03 ADT-List"></a>chap03 ADT-List</h2><ul>
+<li><p>ADT 抽象数据类型</p>
+</li>
+<li><p>The cursor implementation is usually significantly faster because of the lack of memory management routines.</p>
+</li>
+<li><p>链表：先放在前，后放在后</p>
+</li>
+<li><p>Add Two Polynomials</p>
+<ul>
+<li>多项式加法函数</li>
+</ul>
+</li>
+<li><p>Reverse Linked List</p>
+<ul>
+<li>单向链表转置</li>
+</ul>
+</li>
+<li><p>stack：后放在上</p>
+<ul>
+<li><p>A Pop on an empty stack is an error in the stack ADT.</p>
+</li>
+<li><p>Push on a full stack is an implementation error but not an ADT error.</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span>  <span class="hljs-title">StackRecord</span> &#123;</span><br>	<span class="hljs-keyword">int</span> Capacity ; <span class="hljs-comment">/* size of stack */</span><br>	<span class="hljs-keyword">int</span> TopOfStack; <span class="hljs-comment">/* the top pointer */</span><br>	<span class="hljs-comment">/* ++ for push, -- for pop, -1 for empty stack */</span><br>	ElementType *Array; <span class="hljs-comment">/* array for stack elements */</span><br> &#125; ;<br><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>The stack model must be well encapsulated（封装）</p>
+</li>
+<li><p>表达式</p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>infix 中序</th>
+<th>$a+b*c-d/e$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefix 前序</td>
+<td><script type="math/tex">-+a*bc/de</script></td>
+</tr>
+<tr>
+<td>postfix 后序</td>
+<td>$abc*+de/-$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>尾递归一定能变成循环</p>
+</li>
+<li><p>queue：两边开，先入先出，后入后出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span>  <span class="hljs-title">QueueRecord</span> &#123;</span><br>	<span class="hljs-keyword">int</span> Capacity ;   <span class="hljs-comment">/* max size of queue */</span><br>	<span class="hljs-keyword">int</span> Front;  <span class="hljs-comment">/* 队列头预制0，指向最老元素 */</span><br>	<span class="hljs-keyword">int</span> Rear;   <span class="hljs-comment">/* 队列尾预制-1，指向最新元素 */</span><br>	<span class="hljs-keyword">int</span> Size;  <span class="hljs-comment">/* Optional - the current size of queue */</span><br>	ElementType *Array;    <span class="hljs-comment">/* array for queue elements */</span><br> &#125; ;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>循环队列需要保留一个空位</p>
+</li>
+<li><p>Evaluate Postfix Expression</p>
+<ul>
+<li>后序表达式计算</li>
+</ul>
+</li>
+<li><p>Deque</p>
+<ul>
+<li>双向队列</li>
+</ul>
+</li>
+<li><p>Pop Sequence</p>
+<ul>
+<li>检查是否可以这样 pop</li>
+</ul>
+</li>
+</ul>
+<h2 id="chap04-Binary-Tree-amp-Search-Tree"><a href="#chap04-Binary-Tree-amp-Search-Tree" class="headerlink" title="chap04 Binary Tree&amp; Search Tree"></a>chap04 Binary Tree&amp; Search Tree</h2><h3 id="4-1-Binary-Tree"><a href="#4-1-Binary-Tree" class="headerlink" title="4.1 Binary Tree"></a>4.1 Binary Tree</h3><ul>
+<li>There are $N-1$ edges in a tree with $N$ nodes.</li>
+<li>degree<ul>
+<li>of node: 有几个儿子</li>
+<li>of tree: 树中拥有对多个儿子的节点的 degree</li>
+</ul>
+</li>
+<li>length of path: 一路上有多少条边</li>
+<li>$Depth(root) = 0$</li>
+<li>$Height(leaf) = 0$</li>
+<li>第$i$层最多有节点$2^{i-1}$个</li>
+<li>深度为$k$的树最多有节点$2^k-1$个</li>
+<li>threaded binary trees 搜索二叉树，前序/中序/后续<ul>
+<li>左指针指向遍历的前一个，右指针指向后一个</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-Search-Tree"><a href="#4-2-Search-Tree" class="headerlink" title="4.2 Search Tree"></a>4.2 Search Tree</h3><ul>
+<li>Binary Search Tree：左小右大，互不相同</li>
+<li>Isomorphic<ul>
+<li>树的对称</li>
+</ul>
+</li>
+<li>traversal<ul>
+<li>O(N)</li>
+<li>前序 preorder</li>
+<li>中序 inorder</li>
+<li>后序 postorder</li>
+<li>层级 level</li>
+</ul>
+</li>
+<li>ZigZagging on a Tree</li>
+<li>Check BST<ul>
+<li>判断是否为 BST</li>
+<li>返回层数 level</li>
+</ul>
+</li>
+<li>Binary Search Tree<ul>
+<li>建立 BST</li>
+<li>判断两 BST 是否一样</li>
+</ul>
+</li>
+<li>线索二叉树<ul>
+<li>记 ptr 指向二叉链表中的一个结点，以下是建立线索的规则：<br>（1）如果 ptr-&gt;lchild 为空，则存放指向中序遍历序列中该结点的前驱结点。这个结点称为 ptr 的中序前驱；<br>（2）如果 ptr-&gt;rchild 为空，则存放指向中序遍历序列中该结点的后继结点。这个结点称为 ptr 的中序后继；</li>
+</ul>
+</li>
+</ul>
+<h2 id="chap05-Priority-Queues"><a href="#chap05-Priority-Queues" class="headerlink" title="chap05 Priority Queues"></a>chap05 Priority Queues</h2><ul>
+<li><p>完全二叉树高为$h$, 节点数$2^h$到$2^{h+1}-1$</p>
+</li>
+<li><p>$h=\lfloor \log N\rfloor$</p>
+</li>
+<li><p>最小堆/最大堆排序</p>
+<ul>
+<li>时间复杂度$\log_2 N$</li>
+</ul>
+</li>
+<li><p>d-heap</p>
+<ul>
+<li>每个节点有 d 个孩子</li>
+<li>时间复杂度$d\log_dN$</li>
+<li>$i$的父亲$⌊(i+d−2)/d⌋$, 第一个儿子$ (i−1)d+2$, 最后一个儿子$ id+1$</li>
+</ul>
+</li>
+<li><p>Percolate Up and Down</p>
+</li>
+<li><p>Complete Binary Search Tree</p>
+<ul>
+<li>完全二叉搜索树建立</li>
+<li>树的前序遍历</li>
+</ul>
+</li>
+</ul>
+<h2 id="chap06-Sort"><a href="#chap06-Sort" class="headerlink" title="chap06 Sort"></a>chap06 Sort</h2><p><img src="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/format%2Cpng.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="6-1-Shellsort"><a href="#6-1-Shellsort" class="headerlink" title="6.1 Shellsort"></a>6.1 Shellsort</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Shellsort</span><span class="hljs-params">( ElementType A[ ], <span class="hljs-keyword">int</span> N )</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span>  i, j, Increment;<br>    ElementType  Tmp;<br>    <span class="hljs-keyword">for</span> ( Increment = N / <span class="hljs-number">2</span>; Increment &gt; <span class="hljs-number">0</span>; Increment /= <span class="hljs-number">2</span> )<br>	<span class="hljs-comment">/*h sequence */</span><br>	<span class="hljs-keyword">for</span> ( i = Increment; i &lt; N; i++ ) &#123; <span class="hljs-comment">/* insertion sort */</span><br>        Tmp = A[ i ];<br>	     <span class="hljs-keyword">for</span> ( j = i; j &gt;= Increment; j - = Increment )<br>             <span class="hljs-keyword">if</span>( Tmp &lt; A[ j - Increment ] )<br>                 A[ j ] = A[ j - Increment ];<br>        	<span class="hljs-keyword">else</span><br>		      <span class="hljs-keyword">break</span>;<br>			A[ j ] = Tmp;<br>	&#125; <span class="hljs-comment">/* end for-I and for-Increment loops */</span><br>&#125;<br><br></code></pre></td></tr></table></figure>
+<p>第一次间隔为$\lfloor N/2\rfloor$</p>
+<p>后面每一次的间隔为前一次的一半</p>
+<h3 id="6-2-Heapsort"><a href="#6-2-Heapsort" class="headerlink" title="6.2 Heapsort"></a>6.2 Heapsort</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Heapsort</span><span class="hljs-params">( ElementType A[ ], <span class="hljs-keyword">int</span> N )</span></span><br><span class="hljs-function"></span>&#123;  <span class="hljs-keyword">int</span> i;<br>    <span class="hljs-keyword">for</span> ( i = N / <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i - - ) <span class="hljs-comment">/* BuildHeap */</span><br>        PercDown( A, i, N );<br>    <span class="hljs-keyword">for</span> ( i = N - <span class="hljs-number">1</span>; i &gt; <span class="hljs-number">0</span>; i - - ) &#123;<br>        Swap( &amp;A[ <span class="hljs-number">0</span> ], &amp;A[ i ] ); <span class="hljs-comment">/* DeleteMax */</span><br>        PercDown( A, <span class="hljs-number">0</span>, i );<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h3 id="6-3-Mergesort"><a href="#6-3-Mergesort" class="headerlink" title="6.3 Mergesort"></a>6.3 Mergesort</h3><ul>
+<li>需要额外线性空间</li>
+<li>O( N + N log N )次归并</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MSort</span><span class="hljs-params">( ElementType A[ ], ElementType TmpArray[ ],</span></span><br><span class="hljs-params"><span class="hljs-function">		<span class="hljs-keyword">int</span> Left, <span class="hljs-keyword">int</span> Right )</span></span><br><span class="hljs-function"></span>&#123;   <span class="hljs-keyword">int</span>  Center;<br>    <span class="hljs-keyword">if</span> ( Left &lt; Right ) &#123;  <span class="hljs-comment">/* if there are elements to be sorted */</span><br>	Center = ( Left + Right ) / <span class="hljs-number">2</span>;<br>	MSort( A, TmpArray, Left, Center ); 	<span class="hljs-comment">/* T( N / 2 ) */</span><br>	MSort( A, TmpArray, Center + <span class="hljs-number">1</span>, Right ); 	<span class="hljs-comment">/* T( N / 2 ) */</span><br>	Merge( A, TmpArray, Left, Center + <span class="hljs-number">1</span>, Right );  <span class="hljs-comment">/* O( N ) */</span><br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Mergesort</span><span class="hljs-params">( ElementType A[ ], <span class="hljs-keyword">int</span> N )</span></span><br><span class="hljs-function"></span>&#123;   ElementType  *TmpArray;  <span class="hljs-comment">/* need O(N) extra space */</span><br>    TmpArray = <span class="hljs-built_in">malloc</span>( N * <span class="hljs-keyword">sizeof</span>( ElementType ) );<br>    <span class="hljs-keyword">if</span> ( TmpArray != <span class="hljs-literal">NULL</span> ) &#123;<br>	MSort( A, TmpArray, <span class="hljs-number">0</span>, N - <span class="hljs-number">1</span> );<br>	<span class="hljs-built_in">free</span>( TmpArray );<br>    &#125;<br>    <span class="hljs-keyword">else</span>  FatalError( <span class="hljs-string">&quot;No space for tmp array!!!&quot;</span> );<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<ul>
+<li>Iterative Mergesort<ul>
+<li>归并排序，每归并一次输出一次</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-4-Quiksort"><a href="#6-4-Quiksort" class="headerlink" title="6.4 Quiksort"></a>6.4 Quiksort</h3><ul>
+<li>找一个基准，然后从右到左找一个比基准大的，从左到右找一个比基准小的，交换，一轮结束后，基准左边再做快排，右边也做快排</li>
+<li>数量少的时候插入排序更快</li>
+</ul>
+<h3 id="6-5-Tablesort"><a href="#6-5-Tablesort" class="headerlink" title="6.5 Tablesort"></a>6.5 Tablesort</h3><p>In the worst case there are $\lfloor N/2\rfloor $ cycles and requires $\lfloor 3N/2\rfloor$ record moves.</p>
+<h3 id="6-6-Bucketsort"><a href="#6-6-Bucketsort" class="headerlink" title="6.6 Bucketsort"></a>6.6 Bucketsort</h3><ul>
+<li><p>桶排序$O(N)$</p>
+<ol>
+<li><p>通常桶越多，执行效率越快，即省时间，但是桶越多，空间消耗就越大，是一种通过<strong>空间换时间</strong>的方式</p>
+</li>
+<li><p>桶排序的时间代价，假设有<em>m</em>个桶，则每个桶的元素为<em>n/m;</em></p>
+<p>当辅助函数为冒泡排序$O(n2)$时,桶排序为 $O(n)+mO((n/m)2)$;</p>
+<p>当辅助函数为快速排序时$O(nlgn)$时,桶排序为 $*O(n)+mO(n/m log(n/m))$</p>
+</li>
+<li><p>每个桶存储区间内的元素<em>(</em>区间为半开区间例如<em>[0,10)</em>或者<em>[200,300) )</em></p>
+</li>
+<li><p>根据数据规模 n 划分，m 个相同大小的区间 （每个区间为一个桶，桶可理解为容器）</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="6-7-Insertionsort"><a href="#6-7-Insertionsort" class="headerlink" title="6.7 Insertionsort"></a>6.7 Insertionsort</h3><ul>
+<li>inversion: pair ( i, j ) having the property that i &lt; j but A[i] &gt; A[j]</li>
+</ul>
+<h2 id="chap7-Hashing-amp-Rehashing"><a href="#chap7-Hashing-amp-Rehashing" class="headerlink" title="chap7 Hashing &amp; Rehashing"></a>chap7 Hashing &amp; Rehashing</h2><ul>
+<li>Hashing collision: Two elements with different keys share the same hash value</li>
+</ul>
+<h2 id="chap8-Union-find"><a href="#chap8-Union-find" class="headerlink" title="chap8 Union-find"></a>chap8 Union-find</h2><ul>
+<li><p>不做优化的话最差时间复杂度是线性的</p>
+</li>
+<li><p>union by size/union by height</p>
+<ul>
+<li>用于如何合并两棵树的判断，小的成为大的的儿子/矮的成为高的的儿子</li>
+</ul>
+</li>
+<li>union by size<ul>
+<li>$S[root]=-size$</li>
+<li>N 次插入 M 次搜索时间复杂度$O(N+M\log_2N)$</li>
+</ul>
+</li>
+<li>n 个元素 m 个关系，至少 n-m 个等价类</li>
+<li>File Transfer<ul>
+<li>寻找根</li>
+<li>union by size</li>
+<li>check 是否联通</li>
+</ul>
+</li>
+</ul>
+<h2 id="chap9-Graph"><a href="#chap9-Graph" class="headerlink" title="chap9 Graph"></a>chap9 Graph</h2><h3 id="9-1-Graph-definition"><a href="#9-1-Graph-definition" class="headerlink" title="9.1 Graph definition"></a>9.1 Graph definition</h3><ul>
+<li><p>$G(V,E)$</p>
+<ul>
+<li>G: Graph</li>
+<li>$V=V(G)$: 有限非空顶点集合</li>
+<li>$E=E(G)$: 有限边集合</li>
+<li>不允许自成环</li>
+</ul>
+</li>
+<li><p>$G_1\subset G=V(G_1)\subset V(G)\&amp;\&amp;E(G_1)\subset E(G)$</p>
+</li>
+<li><p>connect graph：每个点到任一点都有通路</p>
+</li>
+<li><p>component of an undirected G: 最大连接子图</p>
+</li>
+<li><p>强连通图</p>
+<p>有向图中，若任意两个顶点 Vi 和 Vj，满足从 Vi 到 Vj 以及从 Vj 到 Vi 都连通，也就是都含有至少一条通路，则称此有向图为强连通图。</p>
+</li>
+<li><p>若有向图本身不是强连通图，但其包含的最大连通子图具有强连通图的性质，则称该子图为强连通分量</p>
+</li>
+<li><p>$degree(V)$顶点周围边的条数</p>
+<ul>
+<li>n 顶点 e 边：$\sum_{i=0}^{n-1}degree(v_i)/2=e$</li>
+</ul>
+</li>
+<li><p>Adjacency Matrix 邻接矩阵</p>
+</li>
+<li><p>Adjacency List 邻接链表</p>
+</li>
+</ul>
+<h3 id="9-2-Topological-sort"><a href="#9-2-Topological-sort" class="headerlink" title="9.2 Topological sort"></a>9.2 Topological sort</h3><ul>
+<li>AOV network: 有向不循环图</li>
+<li>if a project is feasible, it must be irreflexive<ul>
+<li>irreflexive: 存在 i 到 j 有通路但无边</li>
+</ul>
+</li>
+<li>拓扑排序不唯一</li>
+<li>Is Topological Order<ul>
+<li>拓扑排序的判断</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-3-Shortest-path"><a href="#9-3-Shortest-path" class="headerlink" title="9.3 Shortest path"></a>9.3 Shortest path</h3><ul>
+<li>If there is no negative-cost cycle, the shortest path from s to s is defined to be 0</li>
+<li>$T = O( |V| + |E| )$</li>
+<li>Shortest Path [3]<ul>
+<li>最短路径条数+最短路径长度</li>
+</ul>
+</li>
+<li>Shortest Path [4]<ul>
+<li>最短路径长度+最短路径上终点前的节点</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-4-Network-flow"><a href="#9-4-Network-flow" class="headerlink" title="9.4 Network flow"></a>9.4 Network flow</h3><ul>
+<li>最大流算法<ul>
+<li>找当前节点上最大的路径<ul>
+<li>network.c dinic 算法</li>
+<li>Universal Travel Sites</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-5-Minimum-Spanning-Tree"><a href="#9-5-Minimum-Spanning-Tree" class="headerlink" title="9.5 Minimum Spanning Tree"></a>9.5 Minimum Spanning Tree</h3><ul>
+<li>边数=顶点数-1</li>
+</ul>
+<h3 id="9-6-MST"><a href="#9-6-MST" class="headerlink" title="9.6 MST"></a>9.6 MST</h3><h3 id="9-7-DFS"><a href="#9-7-DFS" class="headerlink" title="9.7 DFS"></a>9.7 DFS</h3><ul>
+<li><p>欧拉回路</p>
+<ul>
+<li>An Euler tour is possible if there are exactly two vertices having odd degree. One must start at one of the odd-degree vertices.</li>
+<li>欧拉通路、欧拉回路、欧拉图<br>无向图：<ol>
+<li>设 G 是连通无向图，则称经过 G 的每条边一次并且仅一次的路径为欧拉通路；</li>
+<li>如果欧拉通路是回路（起点和终点是同一个顶点），则称此回路为欧拉回路（Euler circuit）；</li>
+<li>具有欧拉回路的无向图 G 称为欧拉图（Euler graph）。<br>有向图：</li>
+<li>设 D 是有向图，D 的基图连通，则称经过 D 的每条边一次并且仅一次的有向路径为有向欧拉通路；</li>
+<li>如果有向欧拉通路是有向回路，则称此有向回路为有向欧拉回路（directed Euler circuit）；</li>
+<li>具有有向欧拉回路的有向图 D 称为有向欧拉图（directed Euler graph）。</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>定理及推论<br>欧拉通路和欧拉回路的判定是很简单的，请看下面的定理及推论。</li>
+</ol>
+<blockquote>
+<p>定理 5.1 无向图 G 存在欧拉通路的充要条件是：G 为连通图，并且 G 仅有两个奇度结点（度数为奇数的顶点）或者无奇度结点。</p>
+<p>推论 5.1：</p>
+<ol>
+<li>当 G 是仅有两个奇度结点的连通图时，G 的欧拉通路必以此两个结点为端点。</li>
+<li>当 G 是无奇度结点的连通图时，G 必有欧拉回路。</li>
+<li>G 为欧拉图（存在欧拉回路）的充分必要条件是 G 为无奇度结点的连通图。</li>
+</ol>
+<p>定理 5.2 有向图 D 存在欧拉通路的充要条件是：<br>D 为有向图，D 的基图连通，并且所有顶点的出度与入度都相等；或者除两个顶点外，其余顶点的出度与入度都相等，而这两个顶点中一个顶点的出度与入度之差为 1，另一个顶点的出度<br>与入度之差为-1。<br>推论 5.2：</p>
+<ol>
+<li>当 D 除出、入度之差为 1，-1 的两个顶点之外，其余顶点的出度与入度都相等时，D 的有向欧拉通路必以出、入度之差为 1 的顶点作为始点，以出、入度之差为-1 的顶点作为终点。</li>
+<li>当 D 的所有顶点的出、入度都相等时，D 中存在有向欧拉回路。</li>
+<li>有向图 D 为有向欧拉图的充分必要条件是 D 的基图为连通图，并且所有顶点的出、入度都相等。</li>
+</ol>
+</blockquote>
+<ol>
+<li>欧拉回路的应用<br>欧拉回路最著名的有三个应用，大家可以网上百度一下，这里不详述。<br>哥尼斯堡七桥问题<br>一笔画问题。<br>旋转鼓轮的设计 4.欧拉回路的判定<br>判断欧拉路是否存在的方法<br>有向图：图连通，有一个顶点出度大入度 1，有一个顶点入度大出度 1，其余都是出度=入度。<br>无向图：图连通，只有两个顶点是奇数度，其余都是偶数度的。<br>判断欧拉回路是否存在的方法<br>有向图：图连通，所有的顶点出度=入度。<br>无向图：图连通，所有顶点都是偶数度。</li>
+</ol>
+</li>
+<li><p>Strongly Connected Components</p>
+<ul>
+<li>寻找回路：所有顶点的出、入度都相等时，D 中存在有向欧拉回路。</li>
+</ul>
+<ol>
+<li>有向图 D 为有向欧拉图的充分必要条件是 D 的基图为连通图，并且所有顶点的出、入度都相等。</li>
+<li>欧拉回路的应用<br>欧拉回路最著名的有三个应用，大家可以网上百度一下，这里不详述。<br>哥尼斯堡七桥问题<br>一笔画问题。<br>旋转鼓轮的设计</li>
+<li>欧拉回路的判定<br>判断欧拉路是否存在的方法<br>有向图：图连通，有一个顶点出度大入度 1，有一个顶点入度大出度 1，其余都是出度=入度。<br>无向图：图连通，只有两个顶点是奇数度，其余都是偶数度的。<br>判断欧拉回路是否存在的方法<br>有向图：图连通，所有的顶点出度=入度。<br>无向图：图连通，所有顶点都是偶数度。</li>
+</ol>
+</li>
+<li><p>Strongly Connected Components</p>
+<ul>
+<li>寻找回路</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E4%B8%80%E4%BA%9B%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">一些课程笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">课程笔记</a>
+                    
+                      <a class="hover-with-bg" href="/tags/cs/">cs</a>
+                    
+                      <a class="hover-with-bg" href="/tags/fds/">fds</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/24/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0Kenneth-H-Rosen/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">离散数学及其应用课程复习Kenneth H.Rosen</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/02/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E9%A9%AC%E5%B7%A5%E7%A8%8B%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/">
+                        <span class="hidden-mobile">宏观经济学 马工程教材笔记整理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'MiracleZeroPenguin/commit-utterances');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://https://github.com/MiracleZeroPenguin" target="_blank" rel="nofollow noopener"><span>MiracleZeroPenguin</span></a> <i class="iconfont icon-exp-fill"></i> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
