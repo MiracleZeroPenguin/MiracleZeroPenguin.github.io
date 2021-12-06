@@ -17,10 +17,11 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>helloWorld</title>
-    <url>/2021/12/06/helloWorld/</url>
-    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
   </entry>
 </search>
