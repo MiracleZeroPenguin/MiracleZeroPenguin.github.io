@@ -4,25 +4,29 @@
   
   
   <entry>
-    <title>面向毕设的react学习笔记</title>
-    <link href="/2021/12/07/%E9%9D%A2%E5%90%91%E6%AF%95%E8%AE%BE%E7%9A%84react%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <url>/2021/12/07/%E9%9D%A2%E5%90%91%E6%AF%95%E8%AE%BE%E7%9A%84react%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <title>面向找工作的面经汇总</title>
+    <link href="/2021/12/07/%E9%9D%A2%E5%90%91%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%9D%A2%E7%BB%8F%E6%B1%87%E6%80%BB/"/>
+    <url>/2021/12/07/%E9%9D%A2%E5%90%91%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%9D%A2%E7%BB%8F%E6%B1%87%E6%80%BB/</url>
     
-    <content type="html"><![CDATA[<h1 id="面向毕设的-react-学习笔记"><a href="#面向毕设的-react-学习笔记" class="headerlink" title="面向毕设的 react 学习笔记"></a>面向毕设的 react 学习笔记</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="面向找工作的面经汇总"><a href="#面向找工作的面经汇总" class="headerlink" title="面向找工作的面经汇总"></a>面向找工作的面经汇总</h1><blockquote><p>面向找工作，所以以一些常见的问题收集为主</p></blockquote><h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="计算机网络由哪几个部分组成"><a href="#计算机网络由哪几个部分组成" class="headerlink" title="计算机网络由哪几个部分组成"></a>计算机网络由哪几个部分组成</h3><p>计算机网络＝资源子网＋通信子网＋协议</p><p><strong>资源子网：</strong>由若干个主机组成，它们向各个用户提供服务；</p><p><strong>通信子网：</strong>由一些专用的节点交换机和连接这些节点的通信链路组成；</p><p><strong>一系列的协议：</strong>这些协议是为在主机之间或主机和子网之间的通信而用</p><h3 id="TCP-建立连接的三次握手"><a href="#TCP-建立连接的三次握手" class="headerlink" title="TCP 建立连接的三次握手"></a>TCP 建立连接的三次握手</h3><ol><li>起初两端都处于 closed 关闭状态，client 将标志位 SYN 置 1，随机产生一个序列值 seq=x，并将该数据包发给 Server，Client 进入 SYN-SENT 状态，等待 Server 确认</li><li>Server 收到数据包后由 SYN=1 得知 Client 正在请求建立连接，Server 将标志位 SYN 和 ACK 都置 1，响应统计值 ack=x+1，随机产生序列值 seq=y，并将该数据包发送给 Client 以确认连接请求，Server 进入 SYN-RCVD 状态，操作系统为该 TCP 连接分配缓存和变量</li><li>Client 收到确认后，检查 ACK 是否为 1、ack 是否为 x+1，并且此时操作系统为该连接分配缓存和变量，将数据包发给 Server。Server 检查 ack 是否为 y+1，ACK 是否为 1，如果正确则连接建立成功，Client 与 Server 进入 Established 状态，可以开始传输数据</li></ol><p><img src="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/666d7d20aa907d8317af3770411f5aa2.jpg" alt="状态变化时序图"></p><h3 id="CDN-原理"><a href="#CDN-原理" class="headerlink" title="CDN 原理"></a>CDN 原理</h3><p>Content Delivery Network，内容分发网络。基本原理是广泛采用各种缓存服务器，将这些缓存服务器分布到用户访问相对集中的地区或网络中。在用户访问网站时，利用全局负载技术将用户的访问指向距离最近的工作正常的缓存服务器上，由缓存服务器直接响应</p><h3 id="用户从输入-URL-到显示页面的过程"><a href="#用户从输入-URL-到显示页面的过程" class="headerlink" title="用户从输入 URL 到显示页面的过程"></a>用户从输入 URL 到显示页面的过程</h3><ol><li>DNS 解析</li><li>TCP 连接</li><li>发送 HTTP 请求</li><li>服务器处理请求并返回 HTTP 报文</li><li>浏览器解析渲染页面</li><li>连接结束</li></ol><h3 id="HTTP-的请求方法"><a href="#HTTP-的请求方法" class="headerlink" title="HTTP 的请求方法"></a>HTTP 的请求方法</h3><p>常见的请求方法有 get,post，</p><p>get 用来请求数据，post 用来提交数据，form 表单使用 get 时数据会以 querystring 形式存在 url 中，因而不够安全也存在数据大小限制，而 post 不会，post 将数据存放在 http 报文体中，获取数据应该用 get，提交数据用 post</p><h3 id="GET-与-POST-区别"><a href="#GET-与-POST-区别" class="headerlink" title="GET 与 POST 区别"></a>GET 与 POST 区别</h3><ol><li>GET 把 参数包含在 URL 中，POST 通过 request body 传递参数</li><li>GET 请求会被 浏览器主动 cache，而 POST 不会，除非手动设置。</li><li>GET 产生 一个 TCP 数据包；POST 产生 两个 TCP 数据包。</li><li>GET 比 POST 更不安全，因为参数 直接暴露在 URL 上，所以不能用来传递敏感信息。</li><li>GET 请求只能进行 url 编码，而 POST 支持 多种编码方式。</li><li>GET 请求参数会被完整保留在浏览器历史记录里，而 POST 中的参数不会被保留。</li><li>GET 产生的 URL 地址可以被 Bookmark，而 POST 不可以</li><li>GET 在浏览器回退时是无害的，而 POST 会再次提交请求。</li><li>由于（主流） 浏览器的一些 限制，导致 get 请求所传输的数据长度和字符编码(ASCII)受到一些限制，但是 post 请求一般未对其进行限制，所以支持更多的编码和数据长度</li></ol><h3 id="请求方法的-head"><a href="#请求方法的-head" class="headerlink" title="请求方法的 head"></a>请求方法的 head</h3><p>Head 只请求页面的首部，head 方法和 get 方法相同，但是服务器响应 head 时不返回消息体。在一个 head 请求的响应中，http 头中包含的元信息应该和一个 get 请求的响应消息相通。head 方法可以用来获取请求中隐含的元信息，而不用传输实体本身，可以用来测试超链接的有效性。</p><ol><li>只请求资源的首部</li><li>检查超链接有效性</li><li>检查网页是否被修改</li></ol><p>用于自动搜索机器人获取网页的标志信息，获取 rss 种子信息，或者传递安全认证信息等</p><h3 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h3><blockquote><p>第一个数字进行分类</p><p>1 表示信息，2 表示成功，3 表示重定向，4 表示客户端错误，5 表示服务器错误</p></blockquote><p>常见的有 101 切换协议，200 成功，301 永久重定向，302 临时重定向，304 未修改</p><hr><p>301 和 302：</p><p>301 永久移动，请求的网页已经永久移动到新的未知，服务器返回此响应，会自动将请求者转到新位置。</p><p>302 历史移动，服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来继续以后的请求。</p><hr><p>200 和 304</p><p>200 表示成功，服务器已成功处理请求，表示为服务器提供了请求的网页</p><p>304 表示未修改，自从上次请求后，请求的网页未修改过，服务器返回此响应时不会返回网页内容</p><h3 id="OSI-七层模型"><a href="#OSI-七层模型" class="headerlink" title="OSI 七层模型"></a>OSI 七层模型</h3><ol><li>应用层：文件传输，HTTP、SNMP、FTP</li><li>表示层：数据格式化、代码转换，数据加密</li><li>会话层：建立、接触会话</li><li>传输层：提供端对端的接口，TCP、UDP</li><li>网络层：为数据包选择路由，IP、ICMP</li><li>数据链路层：传输有地址的帧</li><li>物理层：在物理媒体上传输二进制形式的数据</li></ol><h3 id="TCP-IP-模型"><a href="#TCP-IP-模型" class="headerlink" title="TCP/IP 模型"></a>TCP/IP 模型</h3><p>是一系列网络协议的总称，目的是使计算机之间可以进行信息交换</p><p>从上到下：</p><ol><li>链路层：负责建立电路连接，是整个网络的物理基础，典型协议包括以太网、ADSL</li><li>网络层：分配地址和传送二进制数据，主要协议是 IP 协议</li><li>传输层：负责传送文本数据，主要协议是 TCP</li><li>应用层：传送各种最终形态的数据，是直接与用户信息打交道的层，主要协议是 http、ftp</li></ol><h3 id="TCP-与-UDP-区别"><a href="#TCP-与-UDP-区别" class="headerlink" title="TCP 与 UDP 区别"></a>TCP 与 UDP 区别</h3><p>UDP 不一定提供可靠的数据传输</p><ul><li>TCP 是面向连接的，UDP 是面向无连接的</li><li>UDP 程序结构较简单</li><li>TCP 是面向字节流的，UDP 是基于数据报的</li><li>TCP 保证数据正确性，UDP 可能丢包</li><li>TCP 保证数据顺序，UDP 不保证</li></ul><h3 id="TCP-为什么需要四次挥手"><a href="#TCP-为什么需要四次挥手" class="headerlink" title="TCP 为什么需要四次挥手"></a>TCP 为什么需要四次挥手</h3><p>因为双方都要释放自己的连接，A 向 B 发出释放连接请求，B 收到后给 A 发送一个确认，此时 A 就不能再向 B 发送数据了，处于 FIN-WAIT-2 的状态，但此时 B 还可以向 A 发送数据。接着 B 向 A 也发送一个断开连接的请求，A 收到后给 B 发送一个确认。此时 A、B 都关闭了连接。</p><p><img src="https://raw.githubusercontent.com/MiracleZeroPenguin/images/main/img/1f6a5e17b34f00d28722428b7b8ccb11.jpg" alt="断开连接状态时序图"></p><h3 id="HTTP-缓存机制"><a href="#HTTP-缓存机制" class="headerlink" title="HTTP 缓存机制"></a>HTTP 缓存机制</h3><p>浏览器第一次向服务器发起 HTTP 请求后，服务器会返回请求的资源，并且在响应头中添加一些有关缓存的字段（比如 cache-control，expires，last-modifies，ETag，Data），之后浏览器再向该服务器请求资源就可以视情况使用强缓存和协商缓存</p><p><strong>强缓存</strong>：浏览器直接从本地缓存中获取数据，不与服务器进行交互</p><p><strong>协商缓存</strong>：浏览器发送请求到服务器，服务器判断是否可使用本地缓存</p><h3 id="https-握手过程"><a href="#https-握手过程" class="headerlink" title="https 握手过程"></a>https 握手过程</h3><ol><li>客户端发起握手请求，以明文传输请求信息，就是用户在浏览器里输入一个 HTTPS 网址，然后连接到服务端的 443 端口</li><li>服务端进行配置，采用 HTTPS 协议的服务器必须要有一套数字证书（也就是一对公钥和私钥），可以自己制作，也可以向组织申请</li><li>服务端返回协商的信息结果，包括选择使用的协议版本 version，选择的加密套件 cipher suite</li><li>客户端验证证书的合法性，包括可信性，是否吊销，过期时间和域名，这部分工作是由客户端的 SSL/TLS 来完成的</li><li>客户端使用公匙对对称密匙加密，发送给服务端，传送的是用证书加密后的随机值。</li><li>服务器用私钥解密，拿到对称加密的密匙（服务端用私钥解密后，得到了客户端传过来的随机值，然后把内容通过该随机值进行对称加密，将信息和私钥通过某种算法混合在一起，这样除非知道私钥，不然无法获取内容，而正好客户端和服务端都知道这个私钥）</li><li>传输加密后的信息，这部分信息就是服务端用私钥加密后的信息，可以在客户端用随机值解密还原</li><li>客户端解密信息，客户端用之前生产的私钥解密服务端传过来的信息，于是获取了解密后的内容</li></ol><h3 id="波特率计算公式"><a href="#波特率计算公式" class="headerlink" title="波特率计算公式"></a>波特率计算公式</h3><p>比特率=波特率*单个调制状态对应的二进制位数</p><p>波特率指单片机或计算机在串口通信时的速率。指的是信号被调制以后在单位时间内的变化，即单位时间内载波参数变化的次数</p><h3 id="webSocket-心跳机制"><a href="#webSocket-心跳机制" class="headerlink" title="webSocket 心跳机制"></a>webSocket 心跳机制</h3><p>心跳机制指客户端每隔一段时间会向服务器发送一个数据包，告诉服务器自己还活着，同时客户端会确认服务器端是否还活着，如果还活着的话，服务端就会回传一个数据包给客户端来确定服务器端也还活着，否则的话，有可能是网络断开连接了。需要重连。</p><p>在使用 websocket 的过程中，有时候会遇到网络断开的情况，但是在网络断开的时候服务器端并没有触发 onclose 的事件。这样会有：服务器会继续向客户端发送多余的链接，并且这些数据还会丢失。所以就需要一种机制来检测客户端和服务端是否处于正常的链接状态。因此就有了 websocket 的心跳了。</p><h3 id="tcp-和-http-关系"><a href="#tcp-和-http-关系" class="headerlink" title="tcp 和 http 关系"></a>tcp 和 http 关系</h3><p>http 底层用什么协议得分版本，http1.0 和 http2.0 都是基于 tcp；http3.0 是基于 udp 的，利用介于传输层和应用层之间的一个协议 QUIC 协议保证可靠传输</p><h3 id="网页打不开应该怎么排查"><a href="#网页打不开应该怎么排查" class="headerlink" title="网页打不开应该怎么排查"></a>网页打不开应该怎么排查</h3><p>首先 ping 域名，域名假如 ping 不通说明域名解析有问题，域名能 ping 通但是网站访问不了就有可能是网站程序或者是服务器的问题。也可以根据网站的提醒，当显示 404 或者一些服务器错误的提醒，404 代表的是网页不存在，有可能是网站代码出了问题这样我们集中排查网站程序的问题就行了。也有许多情况是我的电脑打不开，但是有的同伙电脑能打开，这个情况有两种情况，一种是域名 dns 问题，一种是网站服务器问题导致的个别地区访问不了网站的情况。</p><h3 id="HTTP-与-HTTPs-的区别"><a href="#HTTP-与-HTTPs-的区别" class="headerlink" title="HTTP 与 HTTPs 的区别"></a>HTTP 与 HTTPs 的区别</h3><ol><li>加密：http 协议对传输的数据不进行加密；https 协议对传输的数据进行加密，https 加密需要 CA 签发的证书。</li><li>端口：http 协议使用 TCP 的 80 端口；https 协议使用 TCP 的 443 端口</li><li>网络分层模型：http 可以明确是位于应用层；https 是在 http 的基础上加上了 SSL 安全协议，而 SSL 是运输层协议，所以 https 是应用层和传输层的结合</li></ol><h3 id="HTTPs-怎么保证安全"><a href="#HTTPs-怎么保证安全" class="headerlink" title="HTTPs 怎么保证安全"></a>HTTPs 怎么保证安全</h3><p>https 通过 SSL 安全协议来保障安全性。具体体现在密钥和证书验证上。<br><strong>密钥：</strong><br>1、服务端生成一对公钥和私钥，将公钥和证书发送给客户端；<br>2、客户端验证证书通过后生成一个对称加密的密钥，并使用服务器生成的公钥加密，发送给服务器；<br>3、服务器使用私钥解密获得对称加密密钥。<br>4、客户端和服务器相互发送消息认可对称加密密钥，至此加密通道建立。<br>5、开始数据传输，在检验数据完整性的基础上，使用对称加密密钥进行加密解密。<br><strong>证书验证：</strong><br>一般来说浏览器都内置了权威 CA 的根证书，客户端使用根证书的密钥对服务器发来的证书进行解密验证，若域名、有效期、签发机关等验证项符合则通过，否则认定证书无效，断开连接。</p><h3 id="HTTPs-是对称加密还是非对称加密"><a href="#HTTPs-是对称加密还是非对称加密" class="headerlink" title="HTTPs 是对称加密还是非对称加密"></a>HTTPs 是对称加密还是非对称加密</h3><p>采用 对称加密 和 非对称加密 结合的方式来保护浏览器和服务端之间的通信安全。</p><h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>地址解析协议，即<em>ARP</em>（Address Resolution Protocol）</p><p><strong>用于实现从 IP 地址到 MAC 地址的映射，即询问目标 IP 对应的 MAC 地址</strong>。</p><ol><li>主机 A 先查看自己的 ARP 表，确定其中是否包含有主机 B 对应的 ARP 表项，如果找到了对应的 MAC 地址，主机 A 直接利用这个地址对 IP 数据包进行帧分装，并将数据包发送给主机 B</li><li>如果再 ARP 表中找不到，则缓存数据报文，并以广播的方式给该网段上所有主机发送 ARP 请求报文，但只有被请求的主机 B 才会对该请求进行处理</li><li>主机 B 比较自己的 IP 地址与 ARP 请求报文中的目标 IP 地址，若相同，则将主机 A 的 IP 地址与 MAC 地址存入自己的 ARP 表中，之后以单播方式发送 ARP 响应报文给主机 A，其中包含自己的 MAC 地址</li><li>主机 A 收到 ARP 响应报文后，将主机 B 的 MAX 地址加入自己的 ARP 表中，同时封装 IP 数据包并发送</li></ol><h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>dns 解析有两种查询方式，分为递归查询和迭代查询。一般的 主机 向本地域名服务器的查询使用递归查询，本地域名服务器向根域名服务器查询使用迭代查询。它使用的是 UDP 协议，原因是性能更好，查询时间更短，如果发生数据丢失，重传一个就好了，不需要建立连接</p><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="计算机由哪几个部分构成，怎么通讯？"><a href="#计算机由哪几个部分构成，怎么通讯？" class="headerlink" title="计算机由哪几个部分构成，怎么通讯？"></a>计算机由哪几个部分构成，怎么通讯？</h3><p>冯·诺伊曼把计算机分作五部分：计算器、控制器、存储器、输入和输出设备。</p><h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>并发执行的程序在执行过程中分配和管理资源的基本单位，是一个动态概念，竞争计算机系统资源的基本单位</p><h3 id="什么是线程"><a href="#什么是线程" class="headerlink" title="什么是线程"></a>什么是线程</h3><p>是进程的一部分，一个没有线程的进程可以被看作是单线程的，也是 CPI 调度的一个基本单位</p><h3 id="操作系统中进程和线程的区别"><a href="#操作系统中进程和线程的区别" class="headerlink" title="操作系统中进程和线程的区别"></a>操作系统中进程和线程的区别</h3><p>进程是具有一定独立功能的程序，他是系统进行资源分配调度的一个独立单位，</p><p>线程是进程的一个实体，是 cpu 调度分派的基本单位，线程之间基本上不拥有系统资源</p><p>一个程序至少有一个进程，一个进程至少有一个线程，资源分配给进程，同一个进程下所有线程共享该进程的资源</p><h3 id="线程的共享资源"><a href="#线程的共享资源" class="headerlink" title="线程的共享资源"></a>线程的共享资源</h3><h4 id="共享"><a href="#共享" class="headerlink" title="共享"></a>共享</h4><ol><li>堆：堆是在进程空间中开辟的</li><li>全局变量：与某一具体函数无关，所以也与特定线程无关</li><li>静态变量：对于局部变量来说，是放在某一函数的代码中的，但是存放位置和全局变量一样，存于堆开辟的.bss 和.data 段，是共享的</li><li>文件等公用资源：使用这些公共资源的线程必须同步，win32 提供了几种资源同步的方式，如信号、临界区、时间和互斥体</li></ol><h4 id="独享"><a href="#独享" class="headerlink" title="独享"></a>独享</h4><ol><li>栈：栈是独享的</li><li>寄存器：电脑的寄存器是物理的，但线程中存放的是寄存器的副本（包括程序计数器 PC）</li></ol><h3 id="进程间的通信方式"><a href="#进程间的通信方式" class="headerlink" title="进程间的通信方式"></a>进程间的通信方式</h3><p>共八种</p><ol><li>无名管道：半双工的通信方式，数据只能单向流动且只能在具有亲缘关系的进程间使用</li><li>高级管道：将另一个程序当作一个新的进程在当前程序进程中启动，则这个进程算是当前程序的子进程</li><li>有名管道：也是半双工的通信方式，但是允许没有亲缘进程之间的通信</li><li>消息队列：消息队列是有消息的链表，存放在内核中，并由消息队列标识符标识，消息队列克服了信号传递信息少，管道只能承载无格式字节流以及缓冲区大小受限的缺点</li><li>信号量：信号量是一个计数器，可以用来控制多个进程对共享资源的访问，它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源，</li><li>信号：用于通知接受进程某个事件已经发生</li><li>共享内存：共享内存就是映射一段能被其他进程所访问的内存。这段共享内存由一个进程创建，但是多个进程可以访问，共享内存是最快的 IPC 方式，往往与其他通信机制配合使用</li><li>套接字：可用于不同机器之间的进程通信</li></ol><h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><p>著名的死锁避免算法</p><p>基本思想：把操作系统视为银行家，操作系统管理的资源相当于银行家管理的资金，进程向操作系统请求分配资源相当于用户向银行家贷款。操作系统按照银行家指定的规则进行进程的资源分配。</p><p>进程在运行之前先声明对各种资源的最大需求量，当进程在执行中继续申请资源时，先测试该进程已经占用的资源数和本次申请的资源数之和是否超过声明的最大需求量。如果超过了，就拒绝分配。否则，再测试系统现存的资源能否满足该进程尚需的最大资源量，如果能满足就分配，否则就推迟分配</p><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="Redis-和-MySQL"><a href="#Redis-和-MySQL" class="headerlink" title="Redis 和 MySQL"></a>Redis 和 MySQL</h3><p>从类型上来说，mysql 是关系型数据库，redis 是缓存数据库</p><p>作用上，mysql 用于持久化的存储数据到硬盘，功能强大，但是速度较慢。redis 用于存储使用较为频繁的数据到缓存中，读取速度快</p><p>需求上，mysql 和 redis 因为需求的不同，一般都是配合使用</p><h2 id="css、Js、http"><a href="#css、Js、http" class="headerlink" title="css、Js、http"></a>css、Js、http</h2><h3 id="CSS3-缩放、旋转相关的-API"><a href="#CSS3-缩放、旋转相关的-API" class="headerlink" title="CSS3 缩放、旋转相关的 API"></a>CSS3 缩放、旋转相关的 API</h3><p>在 CSS3 中，可以利用 transform 功能实现文字或图像的旋转、缩放、倾斜、移动这 4 中类型的变形处理。</p><p><strong>旋转</strong>：使用 rotate 方法，在参数中加入角度值，角度值后面跟表示角度单位的“deg”文字即可，旋转方向为顺时针方向。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">transform</span>：rotate（<span class="hljs-number">45deg</span>）；<br></code></pre></td></tr></table></figure><p><strong>缩放</strong>：</p><p>使用 scale 方法来实现文字或图像的缩放处理，在参数中指定缩放倍率。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">transform</span>：scale（<span class="hljs-number">0.5</span>）；//缩小一半<br></code></pre></td></tr></table></figure><p>可以分别指定元素的水平方向的放大倍率与垂直方向的放大倍率</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">transform</span>：scale（<span class="hljs-number">0.5</span>，<span class="hljs-number">2</span>）；//水平方向缩小一半，垂直方向放大一倍。<br></code></pre></td></tr></table></figure><h3 id="js-为什么是单线程"><a href="#js-为什么是单线程" class="headerlink" title="js 为什么是单线程"></a>js 为什么是单线程</h3><p>作为浏览器脚本语言，JavaScript 的主要用途是与用户互动，以及操作 DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。比如，假定 JavaScript 同时有两个线程，一个线程在某个 DOM 节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？</p><h3 id="移动端的适配要考虑哪些"><a href="#移动端的适配要考虑哪些" class="headerlink" title="移动端的适配要考虑哪些"></a>移动端的适配要考虑哪些</h3><p>在移动端虽然整体来说大部分浏览器内核都是 webkit，而且大部分都支持 CSS3 的所有语法。但是，由于手机屏幕尺寸不一样，分辨率不一样，或者我们还需要考虑横竖屏的问题，这时候也就不得不解决在不同手机上，不同情况下的展示效果了。</p><ol><li>元素自适应问题</li><li>文字 rem 问题</li><li>高清图问题</li><li>1 像素问题</li><li>横竖屏显示问题</li><li>手机字体缩放问题</li></ol><h3 id="JS-如果执行很久阻塞界面怎么办，有哪些解决方式？"><a href="#JS-如果执行很久阻塞界面怎么办，有哪些解决方式？" class="headerlink" title="JS 如果执行很久阻塞界面怎么办，有哪些解决方式？"></a>JS 如果执行很久阻塞界面怎么办，有哪些解决方式？</h3><p><strong>什么是阻塞</strong>：在页面中我们通常会引用外部文件，而浏览器在解析 HTML 页面是从上到下依次解析、渲染，如果中引用了一个 a.js 文件，而这个文件很大或者有问题，需要 2 秒加载，那么浏览器会停止渲染页面（此时是白屏显示，就是页面啥都没有），2 秒后加载完成才会继续渲染，这个就是阻塞。</p><p><strong>解决方法</strong>：</p><ol><li><p>推迟加载：如果页面初始的渲染并不依赖于 js 或者 CSS 可以用推迟加载，就是最后在加载 js 和 css，把引用外部文件的代码写在最后。比如一些按钮的点击事件，比如轮播图动画的脚本也可以放在最后。</p></li><li><p>defer 延迟加载</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script src=<span class="hljs-string">&quot;&quot;</span> defer&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure></li><li><p>异步加载</p><p>就是告诉浏览器不必等到加载完外部文件，可以边渲染边下载，什么时候下载完成什么时候执行。</p></li></ol><h3 id="JS-跨域的实现"><a href="#JS-跨域的实现" class="headerlink" title="JS 跨域的实现"></a>JS 跨域的实现</h3><p>一个域通过某种方式请求到另一个域的数据</p><p><strong>JSONP：</strong>通过动态创建 script，再请求一个带参网址实现跨域通信。document.domain + iframe 跨域：两个页面都通过 js 强制设置 document.domain 为基础主域，就实现了同域。</p><p><strong>location.hash + iframe 跨域：</strong>a 欲与 b 跨域相互通信，通过中间页 c 来实现。 三个页面，不同域之间利用 iframe 的 location.hash 传值，相同域之间直接 js 访问来通信。</p><p><strong>window.name + iframe 跨域：</strong>通过 iframe 的 src 属性由外域转向本地域，跨域数据即由 iframe 的 window.name 从外域传递到本地域。</p><p><strong>postMessage 跨域：</strong>可以跨域操作的 window 属性之一。</p><p><strong>CORS：</strong>服务端设置 Access-Control-Allow-Origin 即可，前端无须设置，若要带 cookie 请求，前后端都需要设置。</p><p><strong>代理跨域：</strong>启一个代理服务器，实现数据的转发</p><h3 id="JS-语言特性"><a href="#JS-语言特性" class="headerlink" title="JS 语言特性"></a>JS 语言特性</h3><p>运行在客户端浏览器上；</p><p>不用预编译，直接解析执行代码；</p><p>是弱类型语言，较为灵活；</p><p>与操作系统无关，<a href="https://www.baidu.com/s?wd=跨平台&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd">跨平台</a>的语言；</p><p>脚本语言、解释性语言</p><h3 id="网页性能优化"><a href="#网页性能优化" class="headerlink" title="网页性能优化"></a>网页性能优化</h3><p>减少 HTTP 请求</p><p>使用内容发布网络（CDN）</p><p>添加本地缓存</p><p>压缩资源文件</p><p>将 CSS 样式表放在顶部，把 javascript 放在底部（浏览器的运行机制决定）</p><p>避免使用 CSS 表达式</p><p>减少 DNS 查询</p><p>使用外部 javascript 和 CSS</p><p>避免重定向</p><p>图片 lazyLoad</p><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>分为基本对象类型和引用对象类型</p><p>基本数据类型：按值访问，可操作保存在变量中的实际的值。基本类型值指的是简单的数据段。基本数据类型有这六种:undefined、null、string、number、boolean、symbol。</p><p>引用类型：当复制保存着对象的某个变量时，操作的是对象的引用，但在为对象添加属性时，操作的是实际的对象。引用类型值指那些可能为多个值构成的对象。</p><p>引用类型有这几种：Object、Array、RegExp、Date、Function、特殊的基本包装类型(String、Number、Boolean)以及单体内置对象(Global、Math)。</p><h3 id="元素类型的判断"><a href="#元素类型的判断" class="headerlink" title="元素类型的判断"></a>元素类型的判断</h3><p>判断方法：typeof()，instanceof，Object.prototype.toString.call()等</p><h3 id="HTML-载入和渲染的过程"><a href="#HTML-载入和渲染的过程" class="headerlink" title="HTML 载入和渲染的过程"></a>HTML 载入和渲染的过程</h3><ol><li>浏览器下载 HTML 文件并开始解析 DOM。</li><li>遇到样式表文件<code>link[rel=stylesheet]</code>时，将其加入资源文件下载队列，继续解析 DOM。</li><li>遇到脚本文件时，暂停 DOM 解析并立即下载脚本文件。</li><li>下载结束后立即执行脚本，在脚本中可访问当前``以上的 DOM。</li><li>脚本执行结束，继续解析 DOM。</li><li>整个 DOM 解析完成，触发<code>DOMContentLoaded</code>事件。</li></ol><h2 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h2><h3 id="KMP-算法"><a href="#KMP-算法" class="headerlink" title="KMP 算法"></a>KMP 算法</h3><h3 id="说说-C-Java，JavaScript-这三种语言的区别"><a href="#说说-C-Java，JavaScript-这三种语言的区别" class="headerlink" title="说说 C++,Java，JavaScript 这三种语言的区别"></a>说说 C++,Java，JavaScript 这三种语言的区别</h3><p>从静态类型还是动态类型来看</p><p>静态类型，编译的时候就能够知道每个变量的类型，编程的时候也需要给定类型，如 Java 中的整型 int，浮点型 float 等。C、C++、Java 都属于静态类型语言。</p><p>动态类型，运行的时候才知道每个变量的类型，编程的时候无需显示指定类型，如 JavaScript 中的 var、PHP 中的$。JavaScript、Ruby、Python 都属于动态类型语言。</p><p>静态类型还是动态类型对语言的性能有很大影响。</p><p>对于静态类型，在编译后会大量利用已知类型的优势，如 int 类型，占用 4 个字节，编译后的代码就可以用内存地址加偏移量的方法存取变量，而地址加偏移量的算法汇编很容易实现。</p><p>对于动态类型，会当做字符串通通存下来，之后存取就用字符串匹配。</p><p>从编译型还是解释型来看</p><p>编译型语言，像 C、C++，需要编译器编译成本地可执行程序后才能运行，由开发人员在编写完成后手动实施。用户只使用这些编译好的本地代码，这些本地代码由系统加载器执行，由操作系统的 CPU 直接执行，无需其他额外的虚拟机等。</p><p>源代码=》抽象语法树=》中间表示=》本地代码</p><p>解释性语言，像 JavaScript、Python，开发语言写好后直接将代码交给用户，用户使用脚本解释器将脚本文件解释执行。对于脚本语言，没有开发人员的编译过程，当然，也不绝对。</p><p>源代码=》抽象语法树=》解释器解释执行。</p><p>对于 JavaScript，随着 Java 虚拟机 JIT 技术的引入，工作方式也发生了改变。可以将抽象语法树转成中间表示（字节码），再转成本地代码，如 JavaScriptCore，这样可以大大提高执行效率。也可以从抽象语法树直接转成本地代码，如 V8</p><p>Java 语言，分为两个阶段。首先像 C++语言一样，经过编译器编译。和 C++的不同，C++编译生成本地代码，Java 编译后，生成字节码，字节码与平台无关。第二阶段，由 Java 的运行环境也就是 Java 虚拟机运行字节码，使用解释器执行这些代码。一般情况下，Java 虚拟机都引入了 JIT 技术，将字节码转换成本地代码来提高执行效率。</p><p>注意，在上述情况中，编译器的编译过程没有时间要求，所以编译器可以做大量的代码优化措施。</p><p>对于 JavaScript 与 Java 它们还有的不同：</p><p>对于 Java，Java 语言将源代码编译成字节码，这个同执行阶段是分开的。也就是从源代码到抽象语法树到字节码这段时间的长短是无所谓的。</p><p>对于 JavaScript，这些都是在网页和 JavaScript 文件下载后同执行阶段一起在网页的加载和渲染过程中实施的，所以对于它们的处理时间有严格要求。</p><hr><h3 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h3><p>MQTT(消息队列遥测传输)是 ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP 协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件。</p>]]></content>
     
     
     <categories>
       
-      <category>前端搬砖日记</category>
+      <category>实习搬砖日记</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>react</tag>
+      <tag>cs</tag>
       
-      <tag>前端</tag>
+      <tag>面经</tag>
+      
+      <tag>计算机网络</tag>
+      
+      <tag>操作系统</tag>
       
     </tags>
     
@@ -72,9 +76,9 @@
     
     <tags>
       
-      <tag>llvm</tag>
-      
       <tag>macOS</tag>
+      
+      <tag>llvm</tag>
       
     </tags>
     
@@ -99,11 +103,11 @@
     
     <tags>
       
-      <tag>macOS</tag>
-      
       <tag>glove</tag>
       
       <tag>python</tag>
+      
+      <tag>macOS</tag>
       
     </tags>
     
@@ -128,9 +132,9 @@
     
     <tags>
       
-      <tag>金融</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>金融</tag>
       
       <tag>计量经济学</tag>
       
@@ -157,9 +161,9 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>cs</tag>
+      
+      <tag>课程笔记</tag>
       
       <tag>离散数学</tag>
       
@@ -186,11 +190,11 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>fds</tag>
       
       <tag>cs</tag>
+      
+      <tag>课程笔记</tag>
       
     </tags>
     
@@ -215,11 +219,11 @@
     
     <tags>
       
+      <tag>课程笔记</tag>
+      
       <tag>宏观经济学</tag>
       
       <tag>金融</tag>
-      
-      <tag>课程笔记</tag>
       
     </tags>
     
