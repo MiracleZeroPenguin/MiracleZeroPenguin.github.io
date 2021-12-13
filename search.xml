@@ -31,6 +31,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/12/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>宏观经济学 马工程教材笔记整理</title>
+    <url>/2020/07/02/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E9%A9%AC%E5%B7%A5%E7%A8%8B%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<!-- 
+
+	<div class="row">
+    <embed src="/pdfs/宏观经济学.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ -->
+<object data="/pdfs/宏观经济学.pdf" type="application/pdf" width="100%" height="877px">
+]]></content>
+      <categories>
+        <category>一些课程笔记</category>
+      </categories>
+      <tags>
+        <tag>宏观经济学</tag>
+        <tag>金融</tag>
+        <tag>课程笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>macOS下llvm编译的踩坑经历</title>
     <url>/2021/06/20/macOS%E4%B8%8Bllvm%E7%BC%96%E8%AF%91%E7%9A%84%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86/</url>
     <content><![CDATA[<h1 id="macOS-下-llvm-编译的踩坑经历"><a href="#macOS-下-llvm-编译的踩坑经历" class="headerlink" title="macOS 下 llvm 编译的踩坑经历"></a>macOS 下 llvm 编译的踩坑经历</h1><h2 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">error: no member named <span class="hljs-string">&#x27;MaybeAlign&#x27;</span> <span class="hljs-keyword">in</span> namespace <span class="hljs-string">&#x27;llvm&#x27;</span><br>    <span class="hljs-built_in">return</span> context.builder.CreateAlignedStore(val, ptr, llvm::MaybeAlign(4));<br>                                                        ~~~~~~^<br>error: no member named <span class="hljs-string">&#x27;MaybeAlign&#x27;</span> <span class="hljs-keyword">in</span> namespace <span class="hljs-string">&#x27;llvm&#x27;</span><br>    <span class="hljs-built_in">return</span> context.builder.CreateAlignedLoad(ptr, llvm::MaybeAlign(4));<br></code></pre></td></tr></table></figure>
@@ -52,23 +94,22 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/12/06/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>react+ts学习记录</title>
+    <url>/2021/12/12/react-ts%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<ol>
+<li>用 Typescript 编写 React 的最佳实践：<a href="https://blog.csdn.net/azl397985856/article/details/106513095/">https://blog.csdn.net/azl397985856/article/details/106513095/</a></li>
+<li>eact 脚手架 npm start 报错问题：<a href="https://blog.csdn.net/miaomiao_1024/article/details/119332769">https://blog.csdn.net/miaomiao_1024/article/details/119332769</a></li>
+<li>Failed to load config “react-app” to extend from：<a href="https://www.cnblogs.com/or2-/p/14674917.html">https://www.cnblogs.com/or2-/p/14674917.html</a></li>
+<li>React+Ts+redux：<a href="https://www.jianshu.com/p/2b981304cdd4">https://www.jianshu.com/p/2b981304cdd4</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>技术</category>
       </categories>
       <tags>
-        <tag>测试</tag>
+        <tag>前端</tag>
+        <tag>TypeScript</tag>
+        <tag>react</tag>
       </tags>
   </entry>
   <entry>
@@ -437,31 +478,9 @@
         <category>一些课程笔记</category>
       </categories>
       <tags>
+        <tag>课程笔记</tag>
         <tag>fds</tag>
         <tag>cs</tag>
-        <tag>课程笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>宏观经济学 马工程教材笔记整理</title>
-    <url>/2020/07/02/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E9%A9%AC%E5%B7%A5%E7%A8%8B%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<!-- 
-
-	<div class="row">
-    <embed src="/pdfs/宏观经济学.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
- -->
-<object data="/pdfs/宏观经济学.pdf" type="application/pdf" width="100%" height="877px">
-]]></content>
-      <categories>
-        <category>一些课程笔记</category>
-      </categories>
-      <tags>
-        <tag>课程笔记</tag>
-        <tag>宏观经济学</tag>
-        <tag>金融</tag>
       </tags>
   </entry>
   <entry>
@@ -1753,8 +1772,8 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
         <category>一些课程笔记</category>
       </categories>
       <tags>
-        <tag>cs</tag>
         <tag>课程笔记</tag>
+        <tag>cs</tag>
         <tag>离散数学</tag>
       </tags>
   </entry>
@@ -2015,8 +2034,8 @@ e\leq 3v-6,\text{if }v\geq 3</script><p>对于不连通的平面简单图也成�
         <category>一些课程笔记</category>
       </categories>
       <tags>
-        <tag>课程笔记</tag>
         <tag>金融</tag>
+        <tag>课程笔记</tag>
         <tag>计量经济学</tag>
       </tags>
   </entry>

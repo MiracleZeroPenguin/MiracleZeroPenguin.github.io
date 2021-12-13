@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>react+ts学习记录</title>
+    <link href="/2021/12/12/react-ts%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <url>/2021/12/12/react-ts%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<ol><li>用 Typescript 编写 React 的最佳实践：<a href="https://blog.csdn.net/azl397985856/article/details/106513095/">https://blog.csdn.net/azl397985856/article/details/106513095/</a></li><li>eact 脚手架 npm start 报错问题：<a href="https://blog.csdn.net/miaomiao_1024/article/details/119332769">https://blog.csdn.net/miaomiao_1024/article/details/119332769</a></li><li>Failed to load config “react-app” to extend from：<a href="https://www.cnblogs.com/or2-/p/14674917.html">https://www.cnblogs.com/or2-/p/14674917.html</a></li><li>React+Ts+redux：<a href="https://www.jianshu.com/p/2b981304cdd4">https://www.jianshu.com/p/2b981304cdd4</a></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>TypeScript</tag>
+      
+      <tag>react</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>面向找工作的面经汇总</title>
     <link href="/2021/12/07/%E9%9D%A2%E5%90%91%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%9D%A2%E7%BB%8F%E6%B1%87%E6%80%BB/"/>
     <url>/2021/12/07/%E9%9D%A2%E5%90%91%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%9D%A2%E7%BB%8F%E6%B1%87%E6%80%BB/</url>
@@ -132,9 +161,9 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>金融</tag>
+      
+      <tag>课程笔记</tag>
       
       <tag>计量经济学</tag>
       
@@ -161,9 +190,9 @@
     
     <tags>
       
-      <tag>cs</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>cs</tag>
       
       <tag>离散数学</tag>
       
@@ -190,11 +219,11 @@
     
     <tags>
       
+      <tag>课程笔记</tag>
+      
       <tag>fds</tag>
       
       <tag>cs</tag>
-      
-      <tag>课程笔记</tag>
       
     </tags>
     
@@ -219,11 +248,11 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>宏观经济学</tag>
       
       <tag>金融</tag>
+      
+      <tag>课程笔记</tag>
       
     </tags>
     
